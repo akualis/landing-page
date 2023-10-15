@@ -1,1 +1,28 @@
 // app global css in SCSS form
+.bg-blue-light {
+    background-color: $blue-light;
+}
+
+// MENU
+#menu {
+    position: fixed;
+    z-index: 1000; // or higher if needed
+    transition: top 1s ease, width 1s ease, left 1s ease, transform 1s ease; // Smooth transition effects
+    padding: 10px;
+}
+
+#menu.menu-start {
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    border-radius: 90px;
+}
+
+#menu.menu-end {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0px;
+}
