@@ -167,7 +167,8 @@
         <div class="col-1"></div>
       </div>
 
-      <div class="q-pa-md lt-md">
+      <div class="q-py-md lt-md">
+        <p class="subtitle">Témoignages</p>
         <q-carousel v-model="testimonialSlide" transition-prev="slide-right" transition-next="slide-left" animated
           navigation swipeable arrows control-color="primary" class="rounded-borders">
           <q-carousel-slide v-for="testimonial in testimonials" :key="testimonial.name" :name="testimonial.name"

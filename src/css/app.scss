@@ -327,6 +327,10 @@ p.small {
 
 .preview-carousel img {
     height: 580px;
+
+    @media (max-width: $breakpoint-md-min) {
+        height: 540px;
+    }
 }
 
 .preview-carousel-info {
@@ -351,6 +355,7 @@ p.small {
 
 .preview-carousel-info.top {
     position: relative;
+    width: 350px;
     top: -20px;
 }
 
@@ -407,6 +412,7 @@ p.small {
 
 #testimonials .q-carousel {
     background-color: transparent;
+    height: 500px;
 }
 
 // ACTION INFORM //
