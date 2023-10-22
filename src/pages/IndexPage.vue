@@ -109,12 +109,7 @@
         <div class="col-6">
           <p class="subtitle">Le concept</p>
           <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
-          <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
-            la
-            nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
-            accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
-            Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
-            droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+          <p>// TODO PREVIEW</p>
         </div>
         <div class="col-3"></div>
       </div>
@@ -126,21 +121,23 @@
         <div class="col-1"></div>
         <div class="col-10">
           <p class="subtitle">Témoignages</p>
-          <br>
-          <div class="row">
-            <div class="col-4">1
+          <div class="row q-pt-xl q-mt-xl">
+            <div class="col-4">
+              <img src="/img/portrait/akualis-lyla.png" />
               <h3>Lyla</h3>
               <p>Grâce à Akualis, je peux facilement trouver des points d’eau quand je me ballade avec parents et remplir
                 ma
                 gourde plutôt qu’utiliser du plastique</p>
             </div>
-            <div class="col-4">2
-              <h3>Loan</h3>
+            <div class="col-4">
+              <img src="/img/portrait/akualis-benoit.png" />
+              <h3>Benoît</h3>
               <p>En rando, en vélo, en ville, Akualis me permet de recharger mes gourdes et de profiter pleinement de mes
                 sorties sportives</p>
             </div>
-            <div class="col-4">3
-              <h3>Diane</h3>
+            <div class="col-4">
+              <img src="/img/portrait/akualis-philippe.png" />
+              <h3>Philippe</h3>
               <p>Akualis, au delà d’une application pratique est une application ludique et d’intérêt général</p>
             </div>
           </div>

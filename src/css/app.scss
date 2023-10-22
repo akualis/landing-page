@@ -223,14 +223,28 @@ p {
 #hero {
     text-align: center;
     position: relative;
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.7)), url('/img/akualis-cover.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8)), url('/img/akualis-cover.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+#hero p {
+    color: $secondary;
+    font-size: 20px;
+}
+
+#hero-logo {
+    width: 350px;
+}
+
 #testimonials p {
     padding: 0px 25px;
+}
+
+#testimonials img {
+    border-radius: 50%;
+    width: 180px;
 }
 
 #inform {
@@ -266,12 +280,3 @@ p {
 //     z-index: -1;
 //     opacity: 0.5;
 // }
-
-#hero p {
-    color: $black;
-    font-size: 20px;
-}
-
-#hero-logo {
-    width: 350px;
-}
