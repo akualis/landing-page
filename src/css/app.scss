@@ -42,14 +42,14 @@
     margin: 15px 5px;
 }
 
-#menu a {
+#menu a.menu-item {
     text-decoration: none;
     color: $primary;
     padding: 0px 15px;
     display: block;
 }
 
-#menu a:hover {
+#menu a.menu-item:hover {
     transform: scale(1.1);
 }
 
@@ -238,6 +238,73 @@ p {
     width: 350px;
 }
 
+// CONCEPT
+
+.preview-carousel {
+    margin: auto;
+    width: 950px;
+}
+
+.preview-carousel .q-carousel {
+    height: 750px;
+}
+
+.preview-carousel img {
+    height: 580px;
+}
+
+.preview-carousel-info {
+    position: absolute;
+    height: 150px;
+    width: 420px;
+    text-align: left;
+    background-color: $blue-light;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.preview-carousel-info.left {
+    top: 200px;
+    left: 20px;
+}
+
+.preview-carousel-info.right {
+    top: 400px;
+    right: 40px;
+}
+
+.preview-carousel-info p {
+    color: $primary;
+    font-size: 16px;
+}
+
+.preview-carousel-info p.bold {
+    color: primary;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.preview-carousel-button {
+    height: 50px;
+    width: 6px;
+    background-color: $secondary;
+}
+
+.preview-carousel-button.active {
+    background-color: $primary;
+}
+
+.q-carousel__arrow .q-btn .q-icon {
+    font-size: 50px;
+    /* Adjust this to your desired size */
+}
+
+// .preview-carousel .carousel__slide {
+//     margin-left: 35px;
+// }
+
+// TESTIMONIALS
+
 #testimonials p {
     padding: 0px 25px;
 }
@@ -265,6 +332,10 @@ p {
         max-width: 100%;
     }
 
+}
+
+#inform .input-email input {
+    margin-left: 10px;
 }
 
 // #hero::before {

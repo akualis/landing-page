@@ -8,10 +8,10 @@
         <li><a href="#constat" class="menu-item">Constat</a></li>
         <li><a href="#concept" class="menu-item">Concept</a></li>
         <li><a href="#testimonials" class="menu-item">Témoignages</a></li>
-        <!-- ... add more sections as needed -->
+        <li><a href="#inform" class="menu-item hidden">S'informer</a></li>
       </ul>
 
-      <q-btn id="hero-cta" color="primary" label="Découvrez Akualis" no-caps />
+      <q-btn id="hero-cta" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
     </div>
   </div>
 
@@ -104,20 +104,72 @@
     </section>
 
     <section id="concept" class="full-width bg-white items-center text-center q-my-xl q-py-xl">
-      <div class="row q-my-xl">
+      <div class="row q-mt-xl">
         <div class="col-3"></div>
         <div class="col-6">
           <p class="subtitle">Le concept</p>
           <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
-          <p>// TODO PREVIEW</p>
         </div>
         <div class="col-3"></div>
+      </div>
+
+      <div class="preview-carousel">
+        <q-carousel ref="previewCarousel" v-model="slide" vertical transition-prev="slide-down" transition-next="slide-up"
+          swipeable animated control-color="blue" navigation-icon="radio_button_unchecked" navigation arrows
+          @mouseover="enableScrollCarousel" @mouseleave="disableScrollCarousel">
+
+          <template v-slot:navigation-icon="{ active, onClick }">
+            <q-btn v-if="active" class="preview-carousel-button active" @click="onClick" />
+            <q-btn v-else class="preview-carousel-button" @click="onClick" />
+          </template>
+
+          <q-carousel-slide name="map" class="column no-wrap flex-center">
+            <div class="text-center">
+              <img class="" src="/img/preview/akualis-app-preview-map.png" alt="App Akualis - aperçu de la carte" />
+            </div>
+            <span class="preview-carousel-info left">
+              <p class="bold">Des sources officielles</p>
+              <p>Des points d’eau listées par des organismes certifiés</p>
+            </span>
+            <span class="preview-carousel-info right">
+              <p class="bold">Des points d’eau à jour</p>
+              <p>Confirmés par les contributeurs qui garantissent la pertinence de l’information</p>
+            </span>
+          </q-carousel-slide>
+          <q-carousel-slide name="detail" class="column no-wrap flex-center">
+            <div class="text-center">
+              <img class="" src="/img/preview/akualis-app-preview-detail-fontaine.png"
+                alt="App Akualis - aperçu de la carte" />
+            </div>
+            <span class="preview-carousel-info left">
+              <p class="bold">Des sources officielles</p>
+              <p>Des points d’eau listées par des organismes certifiés</p>
+            </span>
+            <span class="preview-carousel-info right">
+              <p class="bold">Des points d’eau à jour</p>
+              <p>Confirmés par les contributeurs qui garantissent la pertinence de l’information</p>
+            </span>
+          </q-carousel-slide>
+          <q-carousel-slide name="compte" class="column no-wrap flex-center">
+            <div class="text-center">
+              <img class="" src="/img/preview/akualis-app-preview-compte.png" alt="App Akualis - aperçu de la carte" />
+            </div>
+            <span class="preview-carousel-info left">
+              <p class="bold">Des sources officielles</p>
+              <p>Des points d’eau listées par des organismes certifiés</p>
+            </span>
+            <span class="preview-carousel-info right">
+              <p class="bold">Des points d’eau à jour</p>
+              <p>Confirmés par les contributeurs qui garantissent la pertinence de l’information</p>
+            </span>
+          </q-carousel-slide>
+        </q-carousel>
       </div>
 
     </section>
 
     <section id="testimonials" class="full-width items-center text-center q-py-xl">
-      <div class="row q-pb-xl q-my-xl">
+      <div class="row q-pb-xl q-mb-xl">
         <div class="col-1"></div>
         <div class="col-10">
           <p class="subtitle">Témoignages</p>
@@ -125,7 +177,7 @@
             <div class="col-4">
               <img src="/img/portrait/akualis-lyla.png" />
               <h3>Lyla</h3>
-              <p>Grâce à Akualis, je peux facilement trouver des points d’eau quand je me ballade avec parents et remplir
+              <p>Grâce à Akualis, je peux facilement trouver des points d’eau quand je me balade avec parents et remplir
                 ma
                 gourde plutôt qu’utiliser du plastique</p>
             </div>
@@ -206,6 +258,7 @@ export default defineComponent({
       showToolbar: true,
       lastScrollPosition: 0,
       previousScroll: 0,
+      scrollCarouselEnabled: false
     };
   },
   mounted() {
@@ -238,8 +291,6 @@ export default defineComponent({
         }
       }
 
-      this.lastScrollPosition = currentScrollPosition;
-
       // MENU HIGHLIGHT
       const menuItems = document.querySelectorAll('.menu-item');
       let currentScroll = window.scrollY + window.innerHeight * 0.25;
@@ -248,7 +299,7 @@ export default defineComponent({
 
         // Check for the first section specifically
         if (item.getAttribute('href') === "#constat") {
-          if (currentScroll < 200) {
+          if (currentScroll < 700) {
             item.classList.remove('active');
             return;
           } else if (this.previousScroll > currentScroll && currentScroll > (targetSection.offsetTop + targetSection.offsetHeight)) {
@@ -265,9 +316,28 @@ export default defineComponent({
         }
       });
 
+      // // CAROUSEL
+      // if (this.scrollCarouselEnabled) {
+      //   if (currentScrollPosition > this.lastScrollPosition) {
+      //     // downscroll
+      //     this.$refs.previewCarousel.next();
+      //     console.log("next");
+      //   } else {
+      //     // upscroll
+      //     this.$refs.previewCarousel.previous();
+      //   }
+      // }
 
+      // ALL
       this.previousScroll = currentScroll;  // Update the previousScroll value for the next scroll event
+      this.lastScrollPosition = currentScrollPosition;
 
+    },
+    disableScrollCarousel() {
+      this.scrollCarouselEnabled = false;
+    },
+    enableScrollCarousel() {
+      this.scrollCarouselEnabled = true;
     }
   },
   setup() {
@@ -335,7 +405,8 @@ export default defineComponent({
       emailError,
       emailActiveMessage,
       isSubmitting,
-      isSubmitted
+      isSubmitted,
+      slide: ref('map'),
     }
   }
 });
