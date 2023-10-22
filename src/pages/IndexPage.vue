@@ -114,14 +114,15 @@
       </div>
 
       <div class="preview-carousel">
-        <q-carousel ref="previewCarousel" v-model="slide" vertical transition-prev="slide-down" transition-next="slide-up"
-          swipeable animated control-color="blue" navigation-icon="radio_button_unchecked" navigation arrows
-          @mouseover="enableScrollCarousel" @mouseleave="disableScrollCarousel">
+        <!-- vertical transition-prev="slide-down" transition-next="slide-up" navigation-icon="radio_button_unchecked" -->
+        <q-carousel ref="previewCarousel" v-model="slide" transition-prev="slide-right" transition-next="slide-left"
+          swipeable animated control-color="blue" navigation arrows @mouseover="enableScrollCarousel"
+          @mouseleave="disableScrollCarousel">
 
-          <template v-slot:navigation-icon="{ active, onClick }">
+          <!-- <template v-slot:navigation-icon="{ active, onClick }">
             <q-btn v-if="active" class="preview-carousel-button active" @click="onClick" />
             <q-btn v-else class="preview-carousel-button" @click="onClick" />
-          </template>
+          </template> -->
 
           <q-carousel-slide name="map" class="column no-wrap flex-center">
             <div class="text-center">

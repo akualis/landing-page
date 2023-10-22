@@ -264,13 +264,13 @@ p {
 }
 
 .preview-carousel-info.left {
-    top: 200px;
+    top: 180px;
     left: 20px;
 }
 
 .preview-carousel-info.right {
-    top: 400px;
-    right: 40px;
+    top: 420px;
+    right: 20px;
 }
 
 .preview-carousel-info p {
@@ -287,6 +287,8 @@ p {
 .preview-carousel-button {
     height: 50px;
     width: 6px;
+    // height: 6px;
+    // width: 50px;
     background-color: $secondary;
 }
 
