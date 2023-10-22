@@ -116,7 +116,7 @@
 
   </section>
 
-  <section id="testimonial" class="full-width items-center text-center q-py-xl">
+  <section id="testimonials" class="full-width items-center text-center q-py-xl">
     <div class="row q-pb-xl q-my-xl">
       <div class="col-1"></div>
       <div class="col-10">
@@ -205,7 +205,7 @@ export default defineComponent({
         }
 
 
-        if (targetSection.offsetTop <= currentScroll && (targetSection.offsetTop + targetSection.offsetHeight) > currentScroll) {
+        if (targetSection && targetSection.offsetTop <= currentScroll && (targetSection.offsetTop + targetSection.offsetHeight) > currentScroll) {
           menuItems.forEach(el => el.classList.remove('active'));
           item.classList.add('active');
         }
