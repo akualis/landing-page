@@ -220,7 +220,7 @@
     </div>
   </section>
 
-  <q-footer class="bg-blue-light text-grey q-py-lg q-px-xl">
+  <q-footer class="bg-blue-light text-grey q-py-lg q-px-xl text-center">
     <div class="float-left q-pb-sm">
       <!-- <a style="text-decoration: underline; color: inherit;" href="/infos-legales"
         title="CGU / mentions légales">CGU / Mentions
