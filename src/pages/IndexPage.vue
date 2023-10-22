@@ -1,51 +1,137 @@
 <template>
-  <transition name="slide-fade">
-    <q-toolbar v-if="showToolbar" id="menu" class="menu-start bg-white text-blue">
+  <div id="parent-menu">
+    <div v-if="showToolbar" id="menu" class="menu-start bg-white text-blue">
 
-      <q-toolbar-title>
-        Akualis
-      </q-toolbar-title>
+      <img id="menu-logo" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
 
-      <div>Quasar v{{ $q.version }}</div>
-    </q-toolbar>
-  </transition>
+      <ul>
+        <li><a href="#constat" class="menu-item">Constat</a></li>
+        <li><a href="#concept" class="menu-item">Concept</a></li>
+        <li><a href="#testimonials" class="menu-item">Témoignages</a></li>
+        <!-- ... add more sections as needed -->
+      </ul>
 
-  <q-page class="row items-center justify-evenly q-mx-xl q-px-xl">
-    <h1>Hello world!</h1>
+      <q-btn id="hero-cta" color="primary" label="Découvrez Akualis" no-caps />
+    </div>
+  </div>
 
-    <p>
-      What is Lorem Ipsum?<br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-      been the industry's<br> standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-      scrambled it to make a<br> type specimen book. It has survived not only five centuries, but also the leap into
-      electronic typesetting,<br> remaining essentially unchanged. It was popularised in the 1960s with the release of
-      Letraset sheets containing<br> Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-      PageMaker including versions of<br> Lorem Ipsum.<br><br> Why do we use it?<br> It is a long established fact that a
-      reader will be distracted by the readable content of a page when looking at its<br> layout. The point of using Lorem
-      Ipsum is that it has a more-or-less normal distribution of letters, as opposed to<br> using 'Content here, content
-      here', making it look like readable English. Many desktop publishing packages and web<br> page editors now use Lorem
-      Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web<br> sites still in their
-      infancy. Various versions have evolved over the years, sometimes by accident, sometimes on<br> purpose (injected
-      humour and the like).<br><br><br> Where does it come from?<br> Contrary to popular belief, Lorem Ipsum is not simply
-      random text. It has roots in a piece of classical Latin<br> literature from 45 BC, making it over 2000 years old.
-      Richard McClintock, a Latin professor at Hampden-Sydney<br> College in Virginia, looked up one of the more obscure
-      Latin words, consectetur, from a Lorem Ipsum passage, and<br> going through the cites of the word in classical
-      literature, discovered the undoubtable source. Lorem Ipsum comes<br> from sections 1.10.32 and 1.10.33 of "de
-      Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,<br> written in 45 BC. This book is a treatise
-      on the theory of ethics, very popular during the Renaissance. The first<br> line of Lorem Ipsum, "Lorem ipsum dolor
-      sit amet..", comes from a line in section 1.10.32.<br><br> The standard chunk of Lorem Ipsum used since the 1500s is
-      reproduced below for those interested. Sections 1.10.32<br> and 1.10.33 from "de Finibus Bonorum et Malorum" by
-      Cicero are also reproduced in their exact original form,<br> accompanied by English versions from the 1914
-      translation by H. Rackham.<br><br> Where can I get some?<br> There are many variations of passages of Lorem Ipsum
-      available, but the majority have suffered alteration in some<br> form, by injected humour, or randomised words which
-      don't look even slightly believable. If you are going to use a<br> passage of Lorem Ipsum, you need to be sure there
-      isn't anything embarrassing hidden in the middle of text. All the<br> Lorem Ipsum generators on the Internet tend to
-      repeat predefined chunks as necessary, making this the first true<br> generator on the Internet. It uses a
-      dictionary of over 200 Latin words, combined with a handful of model sentence<br> structures, to generate Lorem
-      Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from<br> repetition, injected
-      humour, or non-characteristic words etc.<br><br> 5<br> paragraphs<br> words<br> bytes<br> lists<br> Start with
-      'Lorem<br> ipsum dolor sit amet...'
-    </p>
-  </q-page>
+  <section id="hero" class="full-width items-center text-center q-py-xl">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <img id="hero-logo" class="q-mt-xl q-pt-xl" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
+        <h1 class="q-pt-lg">Faciliter l’accès à l’eau potable pour tous</h1>
+        <p class="q-pb-xl">Rejoignez la révolution de l'eau durable avec Akualis !</p>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </section>
+
+  <section id="constat" class="full-width items-center text-center q-py-xl">
+    <div class="row q-pb-xl q-my-xl">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <p class="subtitle">Le constat</p>
+        <h2 class="">L’eau potable : un enjeu de santé publique</h2>
+        <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que la
+          nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
+          accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
+          Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
+          droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div class="row bg-white">
+      <div class="col-6">
+        <img class="constat--image" src="/img/akualis-save-water.png" alt="Logo de l'application Akualis" />
+      </div>
+      <div class="col-6 constat--text">
+        <p class="">Constat N°1</p>
+        <h3 class="">Localiser les points d’eau potable est un challenge permanent</h3>
+        <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
+          la
+          nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
+          accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
+          Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
+          droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+      </div>
+    </div>
+
+    <div class="row bg-white q-mt-lg">
+      <div class="col-6 constat--text">
+        <p class="">Constat N°2</p>
+        <h3 class="">Réduire l’usage du plastique est une priorité</h3>
+        <p>Le plastique à usage unique est présent à outrance dans notre quotidien.. Il est indispensable de promouvoir
+          les points d’eau potable pour limiter le recours aux bouteilles en plastiques.
+          <br>La France a pour objectif de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à
+          2030.
+        </p>
+      </div>
+      <div class="col-6">
+        <img class="constat--image" src="/img/akualis-no-plastic.png" alt="Logo de l'application Akualis" />
+      </div>
+    </div>
+
+    <div class="row q-pt-xl q-my-xl">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <p class="subtitle">EN CHIFFRES</p>
+        <h2 class="">L’enjeu de la localisation et de la protection des points d’eau</h2>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-4 number">
+        <p class="number--high">9,3</p>
+        <p class="number--text">milliards de litres d’eau en bouteille consommée chaque année en France</p>
+      </div>
+      <div class="col-4 number">
+        <p class="number--high">55%</p>
+        <p class="number--text">de la population mondiale n’a pas accès à des services d’assainissemnt</p>
+      </div>
+      <div class="col-4 number">
+        <p class="number--high">2030</p>
+        <p class="number--text">Les collectivités ont l’obligation de déployer massivement des points d’eau potable d’ici
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="concept" class="full-width bg-white items-center text-center q-my-xl q-py-xl">
+    <div class="row q-my-xl">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <p class="subtitle">Le concept</p>
+        <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
+        <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que la
+          nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
+          accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
+          Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
+          droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+  </section>
+
+  <section id="testimonial" class="full-width items-center text-center q-py-xl">
+    <div class="row q-pb-xl q-my-xl">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <p class="subtitle">Témoignages</p>
+        <br>
+        <div class="row">
+          <div class="col-4">1</div>
+          <div class="col-4">2</div>
+          <div class="col-4">3</div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+  </section>
 
   <q-footer class="bg-blue-light text-grey q-py-xl q-px-xl">
     <div class="float-left q-pb-sm"><a style="text-decoration: underline; color: inherit;" href="/infos-legales"
@@ -65,6 +151,7 @@ export default defineComponent({
     return {
       showToolbar: true,
       lastScrollPosition: 0,
+      previousScroll: 0,
     };
   },
   mounted() {
@@ -75,6 +162,8 @@ export default defineComponent({
   },
   methods: {
     handleScroll() {
+
+      // MENU
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       const toolbar = document.querySelector('#menu');
 
@@ -82,9 +171,8 @@ export default defineComponent({
         // Scrolling down
         if (currentScrollPosition > 50 && !this.isScrolledPastThreshold) {  // Adjust the 50 value as needed
           this.isScrolledPastThreshold = true;
-
-          toolbar.classList.remove("menu-start");
           toolbar.classList.add("menu-end");
+          toolbar.classList.remove("menu-start");
         }
       } else {
         // Scrolling up
@@ -97,6 +185,35 @@ export default defineComponent({
       }
 
       this.lastScrollPosition = currentScrollPosition;
+
+      // MENU HIGHLIGHT
+      const menuItems = document.querySelectorAll('.menu-item');
+      let currentScroll = window.scrollY + window.innerHeight * 0.25;
+      menuItems.forEach((item) => {
+        let targetSection = document.querySelector(item.getAttribute('href'));
+
+        // Check for the first section specifically
+        if (item.getAttribute('href') === "#constat") {
+          if (currentScroll < 200) {
+            item.classList.remove('active');
+            return;
+          } else if (this.previousScroll > currentScroll && currentScroll > (targetSection.offsetTop + targetSection.offsetHeight)) {
+            // If scrolling up and the current position has scrolled past the end of the first section
+            item.classList.remove('active');
+            return;
+          }
+        }
+
+
+        if (targetSection.offsetTop <= currentScroll && (targetSection.offsetTop + targetSection.offsetHeight) > currentScroll) {
+          menuItems.forEach(el => el.classList.remove('active'));
+          item.classList.add('active');
+        }
+      });
+
+
+      this.previousScroll = currentScroll;  // Update the previousScroll value for the next scroll event
+
     }
   }
 });
