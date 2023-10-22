@@ -11,19 +11,21 @@
         <li><a href="#inform" class="menu-item hidden">S'informer</a></li>
       </ul>
 
-      <q-btn id="hero-cta" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
+      <q-btn id="hero-cta" class="gt-sm" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
     </div>
+
+    <q-btn id="hero-cta" class="cta-floating lt-md" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
   </div>
 
   <section id="hero" class="full-width items-center text-center q-py-xl">
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
+      <div class="col-1 col-md-3"></div>
+      <div class="col-10 col-md-6">
         <img id="hero-logo" class="q-mt-xl q-pt-xl" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
         <h1 class="q-pt-lg">Faciliter l’accès à l’eau potable pour tous</h1>
         <p class="q-pb-xl">Rejoignez la révolution de l'eau durable avec Akualis !</p>
       </div>
-      <div class="col-3"></div>
+      <div class="col-1 col-md-3"></div>
     </div>
   </section>
 
@@ -31,8 +33,8 @@
 
     <section id="constat" class="full-width items-center text-center q-py-xl">
       <div class="row q-pb-xl q-my-xl">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
           <p class="subtitle">Le constat</p>
           <h2 class="">L’eau potable : un enjeu de santé publique</h2>
           <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
@@ -42,14 +44,14 @@
             Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
             droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
         </div>
-        <div class="col-3"></div>
+        <div class="col-1 col-md-3"></div>
       </div>
 
-      <div class="row bg-white highlight">
-        <div class="col-6">
+      <div class="row justify-center bg-white highlight constat--row">
+        <div class="col-12 col-md-6">
           <img class="constat--image" src="/img/akualis-save-water.png" alt="Logo de l'application Akualis" />
         </div>
-        <div class="col-6 constat--text">
+        <div class="col-12 col-md-6 constat--text">
           <p class="">Constat N°1</p>
           <h3 class="">Localiser les points d’eau potable est un challenge permanent</h3>
           <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
@@ -61,8 +63,8 @@
         </div>
       </div>
 
-      <div class="row bg-white highlight q-mt-lg">
-        <div class="col-6 constat--text">
+      <div class="row justify-center bg-white highlight constat--row q-mt-lg reverse-wrap">
+        <div class="col-12 col-md-6 constat--text">
           <p class="">Constat N°2</p>
           <h3 class="">Réduire l’usage du plastique est une priorité</h3>
           <p>Le plastique à usage unique est présent à outrance dans notre quotidien.. Il est indispensable de promouvoir
@@ -71,31 +73,32 @@
             2030.
           </p>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <img class="constat--image" src="/img/akualis-no-plastic.png" alt="Logo de l'application Akualis" />
         </div>
       </div>
 
       <div class="row q-pt-xl q-my-xl">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
           <p class="subtitle">EN CHIFFRES</p>
           <h2 class="">L’enjeu de la localisation et de la protection des points d’eau</h2>
         </div>
-        <div class="col-3"></div>
+        <div class="col-1 col-md-3"></div>
       </div>
       <div class="row">
         <div class="col-4 number">
           <p class="number--high">9,3</p>
-          <p class="number--text">milliards de litres d’eau en bouteille consommée chaque année en France</p>
+          <p class="number--text small">milliards de litres d’eau en bouteille consommée chaque année en France</p>
         </div>
         <div class="col-4 number">
           <p class="number--high">55%</p>
-          <p class="number--text">de la population mondiale n’a pas accès à des services d’assainissemnt</p>
+          <p class="number--text small">de la population mondiale n’a pas accès à des services d’assainissemnt</p>
         </div>
         <div class="col-4 number">
           <p class="number--high">2030</p>
-          <p class="number--text">Les collectivités ont l’obligation de déployer massivement des points d’eau potable
+          <p class="number--text small">Les collectivités ont l’obligation de déployer massivement des points d’eau
+            potable
             d’ici
           </p>
         </div>
@@ -105,63 +108,41 @@
 
     <section id="concept" class="full-width bg-white items-center text-center q-my-xl q-py-xl">
       <div class="row q-mt-xl">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
           <p class="subtitle">Le concept</p>
           <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
         </div>
-        <div class="col-3"></div>
+        <div class="col-1 col-md-3"></div>
       </div>
 
       <div class="preview-carousel">
         <!-- vertical transition-prev="slide-down" transition-next="slide-up" navigation-icon="radio_button_unchecked" -->
-        <q-carousel ref="previewCarousel" v-model="slide" transition-prev="slide-right" transition-next="slide-left"
-          swipeable animated control-color="blue" navigation arrows @mouseover="enableScrollCarousel"
-          @mouseleave="disableScrollCarousel">
+        <q-carousel ref="previewCarousel" v-model="appPreviewSlide" transition-prev="slide-right"
+          transition-next="slide-left" swipeable animated control-color="blue" navigation arrows
+          @mouseover="enableScrollCarousel" @mouseleave="disableScrollCarousel">
 
           <!-- <template v-slot:navigation-icon="{ active, onClick }">
             <q-btn v-if="active" class="preview-carousel-button active" @click="onClick" />
             <q-btn v-else class="preview-carousel-button" @click="onClick" />
           </template> -->
 
-          <q-carousel-slide name="map" class="column no-wrap flex-center">
-            <div class="text-center">
-              <img class="" src="/img/preview/akualis-app-preview-map.png" alt="App Akualis - aperçu de la carte" />
+          <q-carousel-slide v-for="appPreview in appPreviews" :key="appPreview.alt" :name="appPreview.alt"
+            class="column no-wrap flex-center">
+            <span class="preview-carousel-info top q-mb-md lt-md">
+              <p class="bold">{{ appPreview.info.left.title }}</p>
+              <p class="small">{{ appPreview.info.left.description }}</p>
+            </span>
+            <div class="text-center q-mb-lg">
+              <img class="" :src="appPreview.picture" :alt="appPreview.alt" />
             </div>
-            <span class="preview-carousel-info left">
-              <p class="bold">Des sources officielles</p>
-              <p>Des points d’eau listées par des organismes certifiés</p>
+            <span class="preview-carousel-info left gt-sm">
+              <p class="bold">{{ appPreview.info.left.title }}</p>
+              <p class="small">{{ appPreview.info.left.description }}</p>
             </span>
-            <span class="preview-carousel-info right">
-              <p class="bold">Des points d’eau à jour</p>
-              <p>Confirmés par les contributeurs qui garantissent la pertinence de l’information</p>
-            </span>
-          </q-carousel-slide>
-          <q-carousel-slide name="detail" class="column no-wrap flex-center">
-            <div class="text-center">
-              <img class="" src="/img/preview/akualis-app-preview-detail-fontaine.png"
-                alt="App Akualis - aperçu de la carte" />
-            </div>
-            <span class="preview-carousel-info left">
-              <p class="bold">Des sources officielles</p>
-              <p>Des points d’eau listées par des organismes certifiés</p>
-            </span>
-            <span class="preview-carousel-info right">
-              <p class="bold">Des points d’eau à jour</p>
-              <p>Confirmés par les contributeurs qui garantissent la pertinence de l’information</p>
-            </span>
-          </q-carousel-slide>
-          <q-carousel-slide name="compte" class="column no-wrap flex-center">
-            <div class="text-center">
-              <img class="" src="/img/preview/akualis-app-preview-compte.png" alt="App Akualis - aperçu de la carte" />
-            </div>
-            <span class="preview-carousel-info left">
-              <p class="bold">Des sources officielles</p>
-              <p>Des points d’eau listées par des organismes certifiés</p>
-            </span>
-            <span class="preview-carousel-info right">
-              <p class="bold">Des points d’eau à jour</p>
-              <p>Confirmés par les contributeurs qui garantissent la pertinence de l’information</p>
+            <span class="preview-carousel-info right gt-sm">
+              <p class="bold">{{ appPreview.info.right.title }}</p>
+              <p class="small">{{ appPreview.info.right.description }}</p>
             </span>
           </q-carousel-slide>
         </q-carousel>
@@ -170,32 +151,34 @@
     </section>
 
     <section id="testimonials" class="full-width items-center text-center q-py-xl">
-      <div class="row q-pb-xl q-mb-xl">
+
+      <div class="row q-pb-xl q-mb-xl gt-sm">
         <div class="col-1"></div>
         <div class="col-10">
           <p class="subtitle">Témoignages</p>
           <div class="row q-pt-xl q-mt-xl">
-            <div class="col-4">
-              <img src="/img/portrait/akualis-lyla.png" />
-              <h3>Lyla</h3>
-              <p>Grâce à Akualis, je peux facilement trouver des points d’eau quand je me balade avec parents et remplir
-                ma
-                gourde plutôt qu’utiliser du plastique</p>
-            </div>
-            <div class="col-4">
-              <img src="/img/portrait/akualis-benoit.png" />
-              <h3>Benoît</h3>
-              <p>En rando, en vélo, en ville, Akualis me permet de recharger mes gourdes et de profiter pleinement de mes
-                sorties sportives</p>
-            </div>
-            <div class="col-4">
-              <img src="/img/portrait/akualis-philippe.png" />
-              <h3>Philippe</h3>
-              <p>Akualis, au delà d’une application pratique est une application ludique et d’intérêt général</p>
+            <div v-for="testimonial in testimonials" :key="testimonial.name" class="col-4">
+              <img :src=testimonial.picture />
+              <h3>{{ testimonial.name }}</h3>
+              <p>{{ testimonial.quote }}</p>
             </div>
           </div>
         </div>
         <div class="col-1"></div>
+      </div>
+
+      <div class="q-pa-md lt-md">
+        <q-carousel v-model="testimonialSlide" transition-prev="slide-right" transition-next="slide-left" animated
+          navigation swipeable arrows control-color="primary" class="rounded-borders">
+          <q-carousel-slide v-for="testimonial in testimonials" :key="testimonial.name" :name="testimonial.name"
+            class="column no-wrap flex-center">
+            <div class="q-mb-xl text-center">
+              <img :src=testimonial.picture />
+              <h3>{{ testimonial.name }}</h3>
+              <p>{{ testimonial.quote }}</p>
+            </div>
+          </q-carousel-slide>
+        </q-carousel>
       </div>
 
     </section>
@@ -204,8 +187,8 @@
 
   <section id="inform" class="full-width items-center text-center q-py-xl">
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
+      <div class="col-1 col-md-3"></div>
+      <div class="col-10 col-md-6">
         <h2 class="q-pt-lg">Restez informé</h2>
         <p class="q-pb-xl">Akualis se donne la mission d’accompagner ce mouvement et de cartographier l’ensemble des
           points d’eau potables en France puis à l’étranger. Grâce à son application mobile simple, ludique et
@@ -232,11 +215,11 @@
 
         <img id="hero-logo" class="" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
       </div>
-      <div class="col-3"></div>
+      <div class="col-1 col-md-3"></div>
     </div>
   </section>
 
-  <q-footer class="bg-blue-light text-grey q-py-xl q-px-xl">
+  <q-footer class="bg-blue-light text-grey q-py-lg q-px-xl">
     <div class="float-left q-pb-sm">
       <!-- <a style="text-decoration: underline; color: inherit;" href="/infos-legales"
         title="CGU / mentions légales">CGU / Mentions
@@ -259,7 +242,7 @@ export default defineComponent({
       showToolbar: true,
       lastScrollPosition: 0,
       previousScroll: 0,
-      scrollCarouselEnabled: false
+      scrollCarouselEnabled: false,
     };
   },
   mounted() {
@@ -399,6 +382,72 @@ export default defineComponent({
       }
     }
 
+    const appPreviews = [
+      {
+        picture: '/img/preview/akualis-app-preview-map.png',
+        alt: 'App Akualis - aperçu de la carte',
+        info: {
+          left: {
+            title: 'Des sources officielles',
+            description: 'Des points d’eau listées par des organismes certifiés'
+          },
+          right: {
+            title: 'Des points d’eau à jour',
+            description: 'Confirmés par les contributeurs qui garantissent la pertinence de l’information'
+          }
+        }
+      },
+      {
+        picture: '/img/preview/akualis-app-preview-detail-fontaine.png',
+        alt: 'App Akualis - aperçu des détails d’une fontaine',
+        info: {
+          left: {
+            title: 'Des sources officielles',
+            description: 'Des points d’eau listées par des organismes certifiés'
+          },
+          right: {
+            title: 'Des points d’eau à jour',
+            description: 'Confirmés par les contributeurs qui garantissent la pertinence de l’information'
+          }
+        }
+      },
+      {
+        picture: '/img/preview/akualis-app-preview-compte.png',
+        alt: 'App Akualis - aperçu du compte utilisateur',
+        info: {
+          left: {
+            title: 'Des sources officielles',
+            description: 'Des points d’eau listées par des organismes certifiés'
+          },
+          right: {
+            title: 'Des points d’eau à jour',
+            description: 'Confirmés par les contributeurs qui garantissent la pertinence de l’information'
+          }
+        }
+      }
+    ]
+
+    const testimonials = [
+      {
+        name: 'Lyla',
+        picture: '/img/portrait/akualis-lyla.png',
+        alt: 'Photo de Lyla',
+        quote: 'Grâce à Akualis, je peux facilement trouver des points d’eau quand je me balade avec parents et remplir ma gourde plutôt qu’utiliser du plastique',
+      },
+      {
+        name: 'Benoît',
+        picture: '/img/portrait/akualis-benoit.png',
+        alt: 'Photo de Benoît',
+        quote: 'En rando, en vélo, en ville, Akualis me permet de recharger mes gourdes et de profiter pleinement de mes sorties sportives',
+      },
+      {
+        name: 'Philippe',
+        picture: '/img/portrait/akualis-philippe.png',
+        alt: 'Photo de Philippe',
+        quote: 'Akualis, au delà d’une application pratique est une application ludique et d’intérêt général'
+      }
+    ];
+
     return {
       email,
       emailRule,
@@ -407,7 +456,10 @@ export default defineComponent({
       emailActiveMessage,
       isSubmitting,
       isSubmitted,
-      slide: ref('map'),
+      appPreviewSlide: ref(appPreviews[0].alt),
+      testimonialSlide: ref(testimonials[0].name),
+      testimonials,
+      appPreviews
     }
   }
 });
