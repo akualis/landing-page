@@ -26,7 +26,7 @@
     position: fixed;
     z-index: 1000; // or higher if needed
     transition: top 1s ease, width 1s ease, left 1s ease, transform 1s ease; // Smooth transition effects
-    padding: 5px;
+    padding: 5px 0px;
     text-align: center;
     justify-content: center;
     font-weight: 600;
@@ -71,6 +71,8 @@
     transform: none;
     width: 100%;
     border-radius: 0px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Horizontal offset, vertical offset, blur radius, and color */
 }
 
 #hero-cta {
@@ -143,11 +145,10 @@ p {
 
 // miscellaneous
 
-.row.bg-white {
+.highlight {
     border-radius: 20px;
     padding: 20px;
 }
-
 
 .constat--image {
     border-radius: 20px;
@@ -226,6 +227,30 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+#testimonials p {
+    padding: 0px 25px;
+}
+
+#inform {
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('/img/akualis-fountain.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+// ACTION INFORM //
+#inform .input-email {
+    max-width: 80%;
+
+    @media (max-width: $breakpoint-sm-max) {
+        max-width: 100%;
+    }
+
 }
 
 // #hero::before {

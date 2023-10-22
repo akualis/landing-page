@@ -27,123 +27,180 @@
     </div>
   </section>
 
-  <section id="constat" class="full-width items-center text-center q-py-xl">
-    <div class="row q-pb-xl q-my-xl">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <p class="subtitle">Le constat</p>
-        <h2 class="">L’eau potable : un enjeu de santé publique</h2>
-        <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que la
-          nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
-          accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
-          Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
-          droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
-      </div>
-      <div class="col-3"></div>
-    </div>
+  <div class="container-large">
 
-    <div class="row bg-white">
-      <div class="col-6">
-        <img class="constat--image" src="/img/akualis-save-water.png" alt="Logo de l'application Akualis" />
+    <section id="constat" class="full-width items-center text-center q-py-xl">
+      <div class="row q-pb-xl q-my-xl">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <p class="subtitle">Le constat</p>
+          <h2 class="">L’eau potable : un enjeu de santé publique</h2>
+          <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
+            la
+            nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
+            accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
+            Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
+            droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+        </div>
+        <div class="col-3"></div>
       </div>
-      <div class="col-6 constat--text">
-        <p class="">Constat N°1</p>
-        <h3 class="">Localiser les points d’eau potable est un challenge permanent</h3>
-        <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
-          la
-          nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
-          accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
-          Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
-          droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
-      </div>
-    </div>
 
-    <div class="row bg-white q-mt-lg">
-      <div class="col-6 constat--text">
-        <p class="">Constat N°2</p>
-        <h3 class="">Réduire l’usage du plastique est une priorité</h3>
-        <p>Le plastique à usage unique est présent à outrance dans notre quotidien.. Il est indispensable de promouvoir
-          les points d’eau potable pour limiter le recours aux bouteilles en plastiques.
-          <br>La France a pour objectif de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à
-          2030.
-        </p>
-      </div>
-      <div class="col-6">
-        <img class="constat--image" src="/img/akualis-no-plastic.png" alt="Logo de l'application Akualis" />
-      </div>
-    </div>
-
-    <div class="row q-pt-xl q-my-xl">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <p class="subtitle">EN CHIFFRES</p>
-        <h2 class="">L’enjeu de la localisation et de la protection des points d’eau</h2>
-      </div>
-      <div class="col-3"></div>
-    </div>
-    <div class="row">
-      <div class="col-4 number">
-        <p class="number--high">9,3</p>
-        <p class="number--text">milliards de litres d’eau en bouteille consommée chaque année en France</p>
-      </div>
-      <div class="col-4 number">
-        <p class="number--high">55%</p>
-        <p class="number--text">de la population mondiale n’a pas accès à des services d’assainissemnt</p>
-      </div>
-      <div class="col-4 number">
-        <p class="number--high">2030</p>
-        <p class="number--text">Les collectivités ont l’obligation de déployer massivement des points d’eau potable d’ici
-        </p>
-      </div>
-    </div>
-
-  </section>
-
-  <section id="concept" class="full-width bg-white items-center text-center q-my-xl q-py-xl">
-    <div class="row q-my-xl">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <p class="subtitle">Le concept</p>
-        <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
-        <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que la
-          nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
-          accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
-          Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
-          droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
-      </div>
-      <div class="col-3"></div>
-    </div>
-
-  </section>
-
-  <section id="testimonials" class="full-width items-center text-center q-py-xl">
-    <div class="row q-pb-xl q-my-xl">
-      <div class="col-1"></div>
-      <div class="col-10">
-        <p class="subtitle">Témoignages</p>
-        <br>
-        <div class="row">
-          <div class="col-4">1</div>
-          <div class="col-4">2</div>
-          <div class="col-4">3</div>
+      <div class="row bg-white highlight">
+        <div class="col-6">
+          <img class="constat--image" src="/img/akualis-save-water.png" alt="Logo de l'application Akualis" />
+        </div>
+        <div class="col-6 constat--text">
+          <p class="">Constat N°1</p>
+          <h3 class="">Localiser les points d’eau potable est un challenge permanent</h3>
+          <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
+            la
+            nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
+            accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
+            Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
+            droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
         </div>
       </div>
-      <div class="col-1"></div>
-    </div>
 
+      <div class="row bg-white highlight q-mt-lg">
+        <div class="col-6 constat--text">
+          <p class="">Constat N°2</p>
+          <h3 class="">Réduire l’usage du plastique est une priorité</h3>
+          <p>Le plastique à usage unique est présent à outrance dans notre quotidien.. Il est indispensable de promouvoir
+            les points d’eau potable pour limiter le recours aux bouteilles en plastiques.
+            <br>La France a pour objectif de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à
+            2030.
+          </p>
+        </div>
+        <div class="col-6">
+          <img class="constat--image" src="/img/akualis-no-plastic.png" alt="Logo de l'application Akualis" />
+        </div>
+      </div>
+
+      <div class="row q-pt-xl q-my-xl">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <p class="subtitle">EN CHIFFRES</p>
+          <h2 class="">L’enjeu de la localisation et de la protection des points d’eau</h2>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-4 number">
+          <p class="number--high">9,3</p>
+          <p class="number--text">milliards de litres d’eau en bouteille consommée chaque année en France</p>
+        </div>
+        <div class="col-4 number">
+          <p class="number--high">55%</p>
+          <p class="number--text">de la population mondiale n’a pas accès à des services d’assainissemnt</p>
+        </div>
+        <div class="col-4 number">
+          <p class="number--high">2030</p>
+          <p class="number--text">Les collectivités ont l’obligation de déployer massivement des points d’eau potable
+            d’ici
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="concept" class="full-width bg-white items-center text-center q-my-xl q-py-xl">
+      <div class="row q-my-xl">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <p class="subtitle">Le concept</p>
+          <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
+          <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
+            la
+            nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
+            accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
+            Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
+            droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+    </section>
+
+    <section id="testimonials" class="full-width items-center text-center q-py-xl">
+      <div class="row q-pb-xl q-my-xl">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <p class="subtitle">Témoignages</p>
+          <br>
+          <div class="row">
+            <div class="col-4">1
+              <h3>Lyla</h3>
+              <p>Grâce à Akualis, je peux facilement trouver des points d’eau quand je me ballade avec parents et remplir
+                ma
+                gourde plutôt qu’utiliser du plastique</p>
+            </div>
+            <div class="col-4">2
+              <h3>Loan</h3>
+              <p>En rando, en vélo, en ville, Akualis me permet de recharger mes gourdes et de profiter pleinement de mes
+                sorties sportives</p>
+            </div>
+            <div class="col-4">3
+              <h3>Diane</h3>
+              <p>Akualis, au delà d’une application pratique est une application ludique et d’intérêt général</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <section id="inform" class="full-width items-center text-center q-py-xl">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <h2 class="q-pt-lg">Restez informé</h2>
+        <p class="q-pb-xl">Akualis se donne la mission d’accompagner ce mouvement et de cartographier l’ensemble des
+          points d’eau potables en France puis à l’étranger. Grâce à son application mobile simple, ludique et
+          collaborative, Akualis permet à tous d’identifier rapidement les sources d’eau à proximité et incite les
+          utilisateurs à identifier les points d’eau qui n’ont pas encore été répertoriés ou à confirmer leur présence,
+          maintenant ainsi en temps réel sa base de données.
+          <br>L’application sera disponible très prochainement. Partagez avec nous votre email pour être prévenu de son
+          lancement.
+        </p>
+
+        <form>
+          <q-input outlined bg-color="white" rounded :disable="isSubmitted" :error-message="emailActiveMessage"
+            :error="emailError" lazy-rules v-model="email" :rules="[emailRule]" placeholder="Rester informé par email"
+            class="input-email q-mx-auto">
+            <template v-slot:append>
+              <q-btn aria-label="Envoyez votre email" flat round dense @click="submitEmail" type="submit"
+                :loading="isSubmitting">
+                <img src="/img/akualis-icon.png" alt="Icône de Else pour envoyer l'adresse e-mail" width="40"
+                  height="40" />
+              </q-btn>
+            </template>
+          </q-input>
+        </form>
+
+        <img id="hero-logo" class="" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
+      </div>
+      <div class="col-3"></div>
+    </div>
   </section>
 
   <q-footer class="bg-blue-light text-grey q-py-xl q-px-xl">
-    <div class="float-left q-pb-sm"><a style="text-decoration: underline; color: inherit;" href="/infos-legales"
+    <div class="float-left q-pb-sm">
+      <!-- <a style="text-decoration: underline; color: inherit;" href="/infos-legales"
         title="CGU / mentions légales">CGU / Mentions
-        légales</a> | <a style="text-decoration: underline; color: inherit;" href="mailto:hello@akualis.com"
-        title="Akualis App mail">hello@akualis.com</a></div>
+        légales</a> |  -->
+      <a style="text-decoration: underline; color: inherit;" href="mailto:hello@akualis.com"
+        title="Akualis App mail">hello@akualis.com</a>
+    </div>
     <div class="float-right">© 2023 Akualis App. Tous droits réservés.</div>
   </q-footer>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { useQuasar } from 'quasar';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -214,6 +271,74 @@ export default defineComponent({
 
       this.previousScroll = currentScroll;  // Update the previousScroll value for the next scroll event
 
+    }
+  },
+  setup() {
+    const $q = useQuasar();
+    const email = ref('');
+    const emailError = ref(false);
+    const emailMessage = {
+      submitted: 'Votre email a bien été enregistré !',
+      invalid: 'Email invalide.',
+      error: 'Email existant ou problème de communication avec le serveur.'
+    }
+    const emailActiveMessage = ref(emailMessage.invalid);
+    const isSubmitting = ref(false);
+    const isSubmitted = ref(false);
+    const emailRule = (val: string) => {
+      if (val === '') return true;
+      // Email validation pattern
+      const pattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+      emailError.value = false;
+      return pattern.test(val) || emailMessage.invalid;
+    }
+
+    const submitEmail = async () => {
+      // Handle email submission
+      if (emailRule(email.value) === true) {
+        // Do something with the email
+        // console.log(email.value);
+        try {
+          $q.loading.show();  // Show loading spinner
+          // console.log('Email:', email.value);
+
+          isSubmitting.value = true; // disable the input field and button
+          emailError.value = false; // reset the error state
+          emailActiveMessage.value = emailMessage.invalid;
+
+          const response = await axios.post('/api/lead', { email: email.value });
+          console.log('Response:', response);
+          email.value = emailMessage.submitted;  // reset email
+          isSubmitting.value = false;
+          isSubmitted.value = true; // disable the input field and button
+          $q.notify({ type: 'positive', message: emailMessage.submitted });  // Notify success
+        } catch (error) {
+          emailActiveMessage.value = emailMessage.error;
+          emailError.value = true; // trigger the error state
+          isSubmitting.value = false;
+          isSubmitted.value = false;
+          console.error('Error making API call:', error);
+          $q.notify({ type: 'negative', message: emailMessage.error });
+        } finally {
+          $q.loading.hide();
+        }
+      } else {
+        // console.log('Invalid email');
+
+        emailActiveMessage.value = emailMessage.invalid;
+        emailError.value = true;
+        $q.notify({ type: 'negative', message: emailMessage.invalid });
+      }
+    }
+
+    return {
+      email,
+      emailRule,
+      submitEmail,
+      emailError,
+      emailActiveMessage,
+      isSubmitting,
+      isSubmitted
     }
   }
 });
