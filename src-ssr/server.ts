@@ -39,8 +39,9 @@ export const create = ssrCreate((/* { ... } */) => {
   // absolutely need to run before anything else
   if (process.env.PROD) {
     app.use(compression());
-    app.set('trust proxy', true);
   }
+
+  attachRoutes(app);
 
   return app;
 });

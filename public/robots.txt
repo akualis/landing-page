@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /
-
-#Allow: /
-# Sitemap: https://akualis.com/sitemap.xml
+Allow: /
+Sitemap: https://akualis.com/sitemap.xml

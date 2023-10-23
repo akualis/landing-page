@@ -2,7 +2,9 @@
   <div id="parent-menu">
     <div v-if="showToolbar" id="menu" class="menu-start bg-white text-blue">
 
-      <img id="menu-logo" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
+      <a href="/" alt="Accueil Akualis">
+        <img id="menu-logo" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
+      </a>
 
       <ul>
         <li><a href="#constat" class="menu-item">Constat</a></li>
@@ -11,10 +13,10 @@
         <li><a href="#inform" class="menu-item hidden">S'informer</a></li>
       </ul>
 
-      <q-btn id="hero-cta" class="gt-sm" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
+      <q-btn class="hero-cta gt-sm" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
     </div>
 
-    <q-btn id="hero-cta" class="cta-floating lt-md" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
+    <q-btn class="hero-cta cta-floating lt-md" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
   </div>
 
   <section id="hero" class="full-width items-center text-center q-py-xl">
@@ -49,7 +51,8 @@
 
       <div class="row justify-center bg-white highlight constat--row">
         <div class="col-12 col-md-6">
-          <img class="constat--image" src="/img/akualis-save-water.png" alt="Logo de l'application Akualis" />
+          <img class="constat--image" src="/img/akualis-save-water.webp"
+            alt="Photo constat n°1 - Localiser les points d’eau potable est un challenge permanent" />
         </div>
         <div class="col-12 col-md-6 constat--text">
           <p class="">Constat N°1</p>
@@ -74,7 +77,8 @@
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <img class="constat--image" src="/img/akualis-no-plastic.png" alt="Logo de l'application Akualis" />
+          <img class="constat--image" src="/img/akualis-no-plastic.webp"
+            alt="Photo constat n°2 - Réduire l’usage du plastique est une priorité" />
         </div>
       </div>
 
@@ -119,8 +123,7 @@
       <div class="preview-carousel">
         <!-- vertical transition-prev="slide-down" transition-next="slide-up" navigation-icon="radio_button_unchecked" -->
         <q-carousel ref="previewCarousel" v-model="appPreviewSlide" transition-prev="slide-right"
-          transition-next="slide-left" swipeable animated control-color="blue" navigation arrows
-          @mouseover="enableScrollCarousel" @mouseleave="disableScrollCarousel">
+          transition-next="slide-left" swipeable animated control-color="blue" navigation arrows>
 
           <!-- <template v-slot:navigation-icon="{ active, onClick }">
             <q-btn v-if="active" class="preview-carousel-button active" @click="onClick" />
@@ -158,7 +161,7 @@
           <p class="subtitle">Témoignages</p>
           <div class="row q-pt-xl q-mt-xl">
             <div v-for="testimonial in testimonials" :key="testimonial.name" class="col-4">
-              <img :src=testimonial.picture />
+              <img :src=testimonial.picture :alt=testimonial.alt />
               <h3>{{ testimonial.name }}</h3>
               <p>{{ testimonial.quote }}</p>
             </div>
@@ -235,6 +238,8 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useQuasar } from 'quasar';
+
+import axios from 'axios';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -385,7 +390,7 @@ export default defineComponent({
 
     const appPreviews = [
       {
-        picture: '/img/preview/akualis-app-preview-map.png',
+        picture: '/img/preview/akualis-app-preview-map.webp',
         alt: 'App Akualis - aperçu de la carte',
         info: {
           left: {
@@ -399,30 +404,30 @@ export default defineComponent({
         }
       },
       {
-        picture: '/img/preview/akualis-app-preview-detail-fontaine.png',
+        picture: '/img/preview/akualis-app-preview-detail-fontaine.webp',
         alt: 'App Akualis - aperçu des détails d’une fontaine',
         info: {
           left: {
-            title: 'Des sources officielles',
-            description: 'Des points d’eau listées par des organismes certifiés'
+            title: 'Accès et localisation facilités',
+            description: 'Un bouton pour se rendre directement à la source avec une photo pour la retrouver aisément.'
           },
           right: {
-            title: 'Des points d’eau à jour',
-            description: 'Confirmés par les contributeurs qui garantissent la pertinence de l’information'
+            title: 'Historique d’utilisation',
+            description: 'Identifiez quand la fontaine a été utilisée pour la dernière fois, assurant son existence et sa fiabilité.'
           }
         }
       },
       {
-        picture: '/img/preview/akualis-app-preview-compte.png',
+        picture: '/img/preview/akualis-app-preview-compte.webp',
         alt: 'App Akualis - aperçu du compte utilisateur',
         info: {
           left: {
-            title: 'Des sources officielles',
-            description: 'Des points d’eau listées par des organismes certifiés'
+            title: 'Suivez vos contributions',
+            description: 'Gardez un œil sur vos ajouts et modifications pour aider la communauté.'
           },
           right: {
-            title: 'Des points d’eau à jour',
-            description: 'Confirmés par les contributeurs qui garantissent la pertinence de l’information'
+            title: 'Affichez votre classement',
+            description: 'Découvrez où vous vous situez parmi les contributeurs actifs et mesurez votre impact.'
           }
         }
       }
@@ -431,19 +436,19 @@ export default defineComponent({
     const testimonials = [
       {
         name: 'Lyla',
-        picture: '/img/portrait/akualis-lyla.png',
+        picture: '/img/portrait/akualis-lyla.webp',
         alt: 'Photo de Lyla',
         quote: 'Grâce à Akualis, je peux facilement trouver des points d’eau quand je me balade avec parents et remplir ma gourde plutôt qu’utiliser du plastique',
       },
       {
         name: 'Benoît',
-        picture: '/img/portrait/akualis-benoit.png',
+        picture: '/img/portrait/akualis-benoit.webp',
         alt: 'Photo de Benoît',
         quote: 'En rando, en vélo, en ville, Akualis me permet de recharger mes gourdes et de profiter pleinement de mes sorties sportives',
       },
       {
         name: 'Philippe',
-        picture: '/img/portrait/akualis-philippe.png',
+        picture: '/img/portrait/akualis-philippe.webp',
         alt: 'Photo de Philippe',
         quote: 'Akualis, au delà d’une application pratique est une application ludique et d’intérêt général'
       }
