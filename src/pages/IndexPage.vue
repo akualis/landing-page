@@ -237,7 +237,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { useQuasar } from 'quasar';
+import { useMeta, useQuasar } from 'quasar';
 
 import axios from 'axios';
 
@@ -331,6 +331,16 @@ export default defineComponent({
     }
   },
   setup() {
+
+    useMeta(() => {
+      return {
+        // 'title': 'Akualis : Trouvez. Remplissez. Protégez.', // In index.html because only one page
+        'link': [
+          { rel: 'canonical', href: 'https://akualis.com/' }
+        ]
+      }
+    })
+
     const $q = useQuasar();
     const email = ref('');
     const emailError = ref(false);
