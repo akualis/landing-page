@@ -110,7 +110,7 @@
 
     </section>
 
-    <section id="concept" class="full-width bg-white items-center text-center q-my-xl q-py-xl">
+    <section id="concept" class="full-width bg-white items-center text-center q-mt-xl q-py-xl">
       <div class="row q-mt-xl">
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
@@ -155,7 +155,7 @@
 
     <section id="testimonials" class="full-width items-center text-center q-py-xl">
 
-      <div class="row q-pb-xl q-mb-xl gt-sm">
+      <div class="row q-py-xl q-mb-xl gt-sm">
         <div class="col-1"></div>
         <div class="col-10">
           <p class="subtitle">Témoignages</p>
