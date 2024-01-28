@@ -9,6 +9,7 @@
       <ul>
         <li><a href="#constat" class="menu-item">Constat</a></li>
         <li><a href="#concept" class="menu-item">Concept</a></li>
+        <li><a href="#team" class="menu-item gt-sm">Equipe</a></li>
         <li><a href="#testimonials" class="menu-item">Témoignages</a></li>
         <li><a href="#inform" class="menu-item hidden">S'informer</a></li>
       </ul>
@@ -24,8 +25,9 @@
       <div class="col-1 col-md-3"></div>
       <div class="col-10 col-md-6">
         <img id="hero-logo" class="q-mt-xl q-pt-xl" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
-        <h1 class="q-pt-lg">Faciliter l’accès à l’eau potable pour tous</h1>
-        <p class="q-pb-xl">Rejoignez la révolution de l'eau durable avec Akualis !</p>
+        <p class="subtitle">*Akualis, inspiré du latin “Aqualis”, nom commun pour désigner une cruche</p>
+        <h1 class="q-pt-lg">Ensemble, cartographions les points d’eau potable !</h1>
+        <p class="q-pb-xl">Akualis, la seule application qui référence en temps réel les points d’eau dans le monde</p>
       </div>
       <div class="col-1 col-md-3"></div>
     </div>
@@ -37,32 +39,36 @@
       <div class="row q-pb-xl q-my-xl">
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
-          <p class="subtitle">Le constat</p>
-          <h2 class="">L’eau potable : un enjeu de santé publique</h2>
-          <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
-            la
-            nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
-            accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
-            Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
-            droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+          <p class="subtitle">Notre mission</p>
+          <h2 class="">Simplifier et accompagner l’accès à l’eau potable</h2>
+          <pre>Alors que la nécessité de réduire l’utilisation de plastique se fait pressante et que les vagues de chaleur se multiplient, la localisation des points d’eau potable, en ville comme en milieu rural, est un enjeu majeur.
+
+Akualis se donne pour mission d’identifier et de rendre accessible tous les points d’eau potable en les cartographiant, et de promouvoir une consommation raisonnée de cette précieuse ressource.
+
+Akualis n'est pas seulement un outil de localisation ; c'est une plateforme collaborative qui invite chacun à découvrir et partager des points d'eau encore inconnus ou à valider ceux déjà répertoriés. Ainsi, la base de données est enrichie en temps réel, offrant un accès fiable et actualisé aux sources d'eau potable.
+
+L’application mobile, intuitive et ludique Akualis est plus qu'un simple outil ; c'est une aventure où chaque utilisateur devient un explorateur de l'eau.
+
+Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de main de tous.
+          </pre>
         </div>
         <div class="col-1 col-md-3"></div>
       </div>
 
       <div class="row justify-center bg-white highlight constat--row">
-        <div class="col-12 col-md-6">
-          <img class="constat--image" src="/img/akualis-save-water.webp"
+        <div class="col-12 col-md-6 column flex-center">
+          <img class="constat--image" src="/img/akualis-fountain-girl.webp"
             alt="Photo constat n°1 - Localiser les points d’eau potable est un challenge permanent" />
         </div>
         <div class="col-12 col-md-6 constat--text">
           <p class="">Constat N°1</p>
           <h3 class="">Localiser les points d’eau potable est un challenge permanent</h3>
-          <p>Alors que l’eau devient une ressource de plus en plus rare, que les vagues de chaleur se multiplient, et que
-            la
-            nécessité de réduire l’utilisation de plastique se fait pressante,  les collectivités et les établissements
-            accueillants du public ont pour objectifs de déployer de plus en plus de fontaines à eau. 
-            Enjeu de santé publique, cette nécessité est soutenue par l’OMS qui affirme que l’accès à l’eau potable est un
-            droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.</p>
+          <pre>Qui n’a jamais cherché de point d’eau potable pour remplir une gourde, un biberon ou simplement pour étancher sa soif ? Et qui a finalement acheté une bouteille d’eau en plastique, sans se douter qu’une fontaine se trouvait certainement à quelques mètres.
+
+La localisation de la grande majorité des fontaines est pourtant une information publique, disponible notamment dans OpenstreetMap, et plusieurs acteurs se sont déjà attachés à la réalisation de cartes les répertoriant. Cependant, aucun n’a à ce jour réussi à répondre au triple défi d’offrir une couverture géographique à l’échelle nationale, de garantir l’exhaustivité des données, tout en permettant une mise à jour de l’information simple et en temps réel.
+
+Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et participative. Une approche gaming et des fonctionnalités avancées viendront renforcer la volonté de chacun à contribuer.
+</pre>
         </div>
       </div>
 
@@ -70,15 +76,35 @@
         <div class="col-12 col-md-6 constat--text">
           <p class="">Constat N°2</p>
           <h3 class="">Réduire l’usage du plastique est une priorité</h3>
-          <p>Le plastique à usage unique est présent à outrance dans notre quotidien.. Il est indispensable de promouvoir
-            les points d’eau potable pour limiter le recours aux bouteilles en plastiques.
-            <br>La France a pour objectif de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à
-            2030.
-          </p>
+          <pre>
+Savez-vous que, tous les ans, 6,5 millions de tonnes de plastique sont déversées dans l’océan, et que les bouteilles en plastique font partie du top 10 des déchets récupérés sur les plages ?
+
+D’où viennent-elles ? En grande partie, de nos consommations terrestres. 9,3 milliards de litres d’eau en bouteille en plastique sont ainsi consommées par an en France alors que l’ensemble de la population a la chance d’avoir accès à de l’eau potable.
+
+La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à 2030. Et Akualis souhaite contribuer à cette objectif en localisant un maximum de points d’eau pour permettre à chacun de trouver facilement un point d’eau pour remplir sa gourde.
+          </pre>
         </div>
-        <div class="col-12 col-md-6">
-          <img class="constat--image" src="/img/akualis-no-plastic.webp"
+        <div class="col-12 col-md-6 column flex-center">
+          <img class="constat--image" src="/img/akualis-no-plastic-ocean.webp"
             alt="Photo constat n°2 - Réduire l’usage du plastique est une priorité" />
+        </div>
+      </div>
+
+      <div class="row justify-center bg-white highlight q-mt-lg constat--row">
+        <div class="col-12 col-md-6 column flex-center">
+          <img class="constat--image" src="/img/akualis-carte-interactive.webp"
+            alt="Photo constat n°3 - L’accès à l’eau potable, un droit de l’homme universel" />
+        </div>
+        <div class="col-12 col-md-6 constat--text">
+          <p class="">Constat N°3</p>
+          <h3 class="">L’accès à l’eau potable, un droit de l’homme universel</h3>
+          <pre>
+Véritable enjeu de santé publique, l’OMS déclare que l’accès à l’eau potable est un droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.
+
+En France, poussés par la loi AGEC, les collectivités et établissements accueillants du public sont ainsi engagés dans le déploiement accéléré de sources d’eau potable, mais elles sont bien souvent très peu visibles et donc peu utilisées.
+
+Grâce à Akualis ces collectivités et organismes publics pourront informer plus efficacement les citoyens sur les ressources mises à leur disposition. Et les utilisateurs de l'application pourront  remplir leur gourdes en ville, dans les gares, dans les centres commerciaux en toute confiance.
+</pre>
         </div>
       </div>
 
@@ -86,24 +112,22 @@
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
           <p class="subtitle">EN CHIFFRES</p>
-          <h2 class="">L’enjeu de la localisation et de la protection des points d’eau</h2>
+          <h2 class="">L’enjeu d’une meilleure localisation des points d’eau</h2>
         </div>
         <div class="col-1 col-md-3"></div>
       </div>
       <div class="row">
         <div class="col-4 number">
-          <p class="number--high">9,3</p>
-          <p class="number--text small">milliards de litres d’eau en bouteille consommée chaque année en France</p>
+          <p class="number--high">25</p>
+          <p class="number--text small"><b>millions</b> de bouteilles d’eau en plastique sont consommées par jour en France</p>
         </div>
         <div class="col-4 number">
-          <p class="number--high">55%</p>
-          <p class="number--text small">de la population mondiale n’a pas accès à des services d’assainissemnt</p>
+          <p class="number--high">3/4</p>
+          <p class="number--text small">touristes : achètent des bouteilles en plastique lors de leur séjour</p>
         </div>
         <div class="col-4 number">
-          <p class="number--high">2030</p>
-          <p class="number--text small">Les collectivités ont l’obligation de déployer massivement des points d’eau
-            potable
-            d’ici
+          <p class="number--high">2</p>
+          <p class="number--text small"><b>litres</b> d’eau ainsi que 42 L de gaz, 100 ml de pétrole et 80 g de charbon sont nécessaires pour produire une bouteille en plastique d’1L
           </p>
         </div>
       </div>
@@ -115,7 +139,7 @@
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
           <p class="subtitle">Le concept</p>
-          <h2 class="">Bâtissons ensemble un monde hydraté et viable</h2>
+          <h2 class="">L’eau potable : une ressource précieuse à localiser</h2>
         </div>
         <div class="col-1 col-md-3"></div>
       </div>
@@ -153,9 +177,31 @@
 
     </section>
 
+    <section id="team" class="full-width items-center text-center q-pt-xl">
+
+      <div class="row q-mt-xl">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <p class="subtitle">L'équipe</p>
+          <h2 class="">Qui sommes nous ?</h2>
+          <pre class="text-left">En tant qu'association loi 1901, Akualis s'engage à servir l'intérêt général, en mettant en avant des valeurs de transparence et de collaboration.
+
+A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un effort collectif est essentiel pour limiter la dégradation environnementale actuelle, et dotés de compétences complémentaires pour lancer le projet :
+<ul>
+<li>Pauline apporte son expertise en communication, construction du business plan et développement des partenariats stratégiques,
+</li><li>Maxime est garant de la pertinence technique de la plateforme Akualis, de son optimisation et de sa scalabilité,
+</li><li>Jérémie est passionné par l’entrepreneuriat solidaire et apporte son expérience dans la gestion de projets technologiques complexes, notamment en matière d’organisation, de budget et de planning, pour garantir la réussite de l’association dans sa mission.
+</li></ul></pre>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+
+
+      </section>
+
     <section id="testimonials" class="full-width items-center text-center q-py-xl">
 
-      <div class="row q-py-xl q-mb-xl gt-sm">
+      <div class="row q-pb-xl q-my-xl gt-sm">
         <div class="col-1"></div>
         <div class="col-10">
           <p class="subtitle">Témoignages</p>
@@ -193,15 +239,14 @@
     <div class="row">
       <div class="col-1 col-md-3"></div>
       <div class="col-10 col-md-6">
-        <h2 class="q-pt-lg">Restez informé</h2>
-        <p class="q-pb-xl">Akualis se donne la mission d’accompagner ce mouvement et de cartographier l’ensemble des
-          points d’eau potables en France puis à l’étranger. Grâce à son application mobile simple, ludique et
-          collaborative, Akualis permet à tous d’identifier rapidement les sources d’eau à proximité et incite les
-          utilisateurs à identifier les points d’eau qui n’ont pas encore été répertoriés ou à confirmer leur présence,
-          maintenant ainsi en temps réel sa base de données.
-          <br>L’application sera disponible très prochainement. Partagez avec nous votre email pour être prévenu de son
-          lancement.
-        </p>
+        <h2 class="q-pt-lg">Deviens toi aussi un explorateur de l’eau !</h2>
+        <pre class="">
+          En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde , réduisant ainsi votre impact environnemental !
+
+L’application sera disponible très prochainement.
+
+Partage avec nous ton email pour être prévenu de son lancement.
+        </pre>
 
         <form>
           <q-input outlined bg-color="white" rounded :disable="isSubmitted" :error-message="emailActiveMessage"

@@ -56,7 +56,7 @@
 
 #menu.menu-start {
     top: 3%;
-    width: 520px;
+    width: 600px;
     border-radius: 90px;
     margin: auto;
 
@@ -164,6 +164,20 @@ p {
     }
 }
 
+pre {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $secondary;
+    font-family: $typography-font-family;
+    white-space: pre-wrap;
+
+    @media (max-width: $breakpoint-md-min) {
+        font-size: 16px;
+    }
+}
+
 p.small {
     font-size: 16px;
 
@@ -195,6 +209,10 @@ p.small {
     @media (max-width: $breakpoint-md-min) {
         font-size: 45px;
     }
+}
+
+.pre-wrap {
+    white-space: pre-wrap;
 }
 
 // miscellaneous
