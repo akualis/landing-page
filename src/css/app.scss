@@ -140,7 +140,7 @@ h2 {
 }
 
 h3 {
-    font-size: 35px;
+    font-size: 32px;
     color: $primary;
     font-weight: 600;
     font-style: normal;
@@ -165,7 +165,7 @@ p {
 }
 
 pre {
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -202,12 +202,23 @@ p.small {
 
 .number--high {
     color: $primary;
-    font-size: 90px;
+    font-size: 64px;
     font-weight: 400;
     line-height: 110%;
 
     @media (max-width: $breakpoint-md-min) {
-        font-size: 45px;
+        font-size: 42px;
+    }
+}
+
+.number--high .text {
+    color: $primary;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 110%;
+
+    @media (max-width: $breakpoint-md-min) {
+        font-size: 24px;
     }
 }
 
@@ -215,11 +226,51 @@ p.small {
     white-space: pre-wrap;
 }
 
+// EXPANSION
+
+.expander {
+    padding: 0px;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $secondary;
+    font-family: $typography-font-family;
+    white-space: pre-wrap;
+
+    @media (max-width: $breakpoint-md-min) {
+        font-size: 16px;
+    }
+}
+
+.expander:hover {
+    // font-weight: bold;
+}
+
+.expander--content {
+    padding: 0px;
+}
+
 // miscellaneous
 
 .highlight {
     border-radius: 20px;
     padding: 20px;
+}
+
+#constat {
+    border-radius: 20px;
+    margin-bottom: -24px;
+}
+
+.constat--mission {
+    margin-top: 48px;
+    margin-bottom: 48px;
+
+    @media (max-width: $breakpoint-md-min) {
+        margin-bottom: 0px;
+    }
 }
 
 .constat--row {
@@ -247,6 +298,7 @@ p.small {
 
     @media (max-width: $breakpoint-md-min) {
         padding: 20px 40px;
+        margin-top: 24px;
     }
 
     @media (max-width: $breakpoint-sm-min) {
@@ -265,6 +317,7 @@ p.small {
 
 #concept {
     border-radius: 20px;
+    margin-bottom: -24px;
 }
 
 // CONTAINER
@@ -324,6 +377,8 @@ p.small {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-bottom: -48px;
+    min-height: 100svh;
 }
 
 #hero p {
@@ -343,6 +398,10 @@ p.small {
 .preview-carousel {
     margin: auto;
     max-width: 950px;
+}
+
+#concept .q-carousel {
+    background-color: transparent;
 }
 
 .preview-carousel .q-carousel {
@@ -366,7 +425,7 @@ p.small {
     height: 150px;
     width: 420px;
     text-align: left;
-    background-color: $blue-light;
+    background-color: $white;
     border-radius: 20px;
     padding: 20px 30px;
 
@@ -422,7 +481,17 @@ p.small {
 //     margin-left: 35px;
 // }
 
+// TEAM
+
+#team {
+    margin-bottom: -24px;
+}
+
 // TESTIMONIALS
+
+#testimonials {
+    margin-bottom: -24px;
+}
 
 #testimonials p {
     padding: 0px 25px;
