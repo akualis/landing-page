@@ -8,7 +8,7 @@
 
       <ul>
         <li><a href="#concept" @click="smoothScrollTo" class="menu-item">Concept</a></li>
-        <li><a href="#constat" @click="smoothScrollTo" class="menu-item">Constat</a></li>
+        <li><a href="#constat" @click="smoothScrollTo" class="menu-item">Mission</a></li>
         <li><a href="#team" @click="smoothScrollTo" class="menu-item gt-sm">Equipe</a></li>
         <li><a href="#testimonials" @click="smoothScrollTo" class="menu-item">Témoignages</a></li>
         <li><a href="#inform" @click="smoothScrollTo" class="menu-item hidden">S'informer</a></li>
