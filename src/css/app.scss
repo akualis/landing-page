@@ -90,6 +90,11 @@
     border-radius: 60px;
     padding: 10px 15px;
     font-weight: 600;
+    background: var(--q-primary) !important;
+    color: $white;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
 }
 
 .hero-cta.cta-floating {

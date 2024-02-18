@@ -7,17 +7,17 @@
       </a>
 
       <ul>
-        <li><a href="#concept" class="menu-item">Concept</a></li>
-        <li><a href="#constat" class="menu-item">Constat</a></li>
-        <li><a href="#team" class="menu-item gt-sm">Equipe</a></li>
-        <li><a href="#testimonials" class="menu-item">Témoignages</a></li>
-        <li><a href="#inform" class="menu-item hidden">S'informer</a></li>
+        <li><a href="#concept" @click="smoothScrollTo" class="menu-item">Concept</a></li>
+        <li><a href="#constat" @click="smoothScrollTo" class="menu-item">Constat</a></li>
+        <li><a href="#team" @click="smoothScrollTo" class="menu-item gt-sm">Equipe</a></li>
+        <li><a href="#testimonials" @click="smoothScrollTo" class="menu-item">Témoignages</a></li>
+        <li><a href="#inform" @click="smoothScrollTo" class="menu-item hidden">S'informer</a></li>
       </ul>
-
-      <q-btn class="hero-cta gt-sm" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
+      <a class="hero-cta q-btn gt-sm" @click="smoothScrollTo" href="#inform">Découvrez Akualis</a>
     </div>
 
-    <q-btn class="hero-cta cta-floating lt-md" href="#inform" color="primary" label="Découvrez Akualis" no-caps />
+    <a class="hero-cta cta-floating q-btn lt-md" @click="smoothScrollTo" href="#inform">Découvrez Akualis</a>
+    <!-- <q-btn class="hero-cta cta-floating " @click="btnSmoothScrollTo('#inform')" href="#inform" color="primary" label="Découvrez Akualis" no-caps /> -->
   </div>
 
   <section id="hero" class="full-width items-center text-center q-py-lg">
@@ -395,7 +395,23 @@ export default defineComponent({
     },
     enableScrollCarousel() {
       this.scrollCarouselEnabled = true;
-    }
+    },
+    smoothScrollTo(event: Event) {
+      event.preventDefault();
+      const target = event.target as HTMLAnchorElement; // Cast to HTMLAnchorElement for href
+      const targetId = target.getAttribute('href')?.substring(1);
+      const targetElement = targetId ? document.getElementById(targetId) : null;
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    btnSmoothScrollTo(targetId: string) {
+      console.log("clicked");
+      const targetElement = document.getElementById(targetId.substring(1)); // Remove '#' from ID
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
   },
   setup() {
 
