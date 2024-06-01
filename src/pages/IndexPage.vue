@@ -27,7 +27,17 @@
         <img id="hero-logo" class="q-mt-xl q-pt-xl" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
         <p class="subtitle">*Akualis, inspiré du latin “Aqualis”, nom commun pour désigner une cruche</p>
         <h1 class="q-pt-lg">Ensemble, cartographions les points d’eau potable !</h1>
-        <p class="q-pb-xl">Akualis, la seule application qui référence en temps réel les points d’eau dans le monde</p>
+        <p class="q-pb-lg">Akualis, la seule application qui référence en temps réel les points d’eau dans le monde</p>
+        <div class="row justify-center items-center">
+          <a class="q-ma-md"
+            href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
+            style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
+              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1714435200"
+              alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+          <a class="q-ma-md" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
+            style="display: inline-block; overflow: hidden; height: 78px;"><img
+              src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="height: 78px;"></a>
+        </div>
       </div>
       <div class="col-1 col-md-3"></div>
     </div>
@@ -93,7 +103,7 @@ Akualis n'est pas seulement un outil de localisation ; c'est une plateforme coll
 L’application mobile, intuitive et ludique Akualis est plus qu'un simple outil ; c'est une aventure où chaque utilisateur devient un explorateur de l'eau.
 
 Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de main de tous.
-          </pre>
+      </pre>
         </div>
         <div class="col-1 col-md-3"></div>
       </div>
@@ -107,7 +117,7 @@ Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de ma
           <p class="">Constat N°1</p>
           <h3 class="">Localiser les points d’eau potable est un challenge permanent</h3>
           <pre>Qui n’a jamais cherché de point d’eau potable pour remplir une gourde, un biberon ou simplement pour étancher sa soif ? Et qui a finalement acheté une bouteille d’eau en plastique, sans se douter qu’une fontaine se trouvait certainement à quelques mètres ?
-</pre>
+      </pre>
 
           <q-expansion-item class="" dense label="Plus d'informations..." header-class="expander">
             <q-card>
@@ -128,15 +138,15 @@ Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et
           <h3 class="">Réduire l’usage du plastique est une priorité</h3>
           <pre>
 Savez-vous que, tous les ans, 6,5 millions de tonnes de plastique sont déversées dans l’océan, et que les bouteilles en plastique font partie du top 10 des déchets récupérés sur les plages ?
-</pre>
+      </pre>
 
-<q-expansion-item class="" dense label="Plus d'informations..." header-class="expander">
+          <q-expansion-item class="" dense label="Plus d'informations..." header-class="expander">
             <q-card>
               <q-card-section class="expander--content">
                 <pre>D’où viennent-elles ? En grande partie, de nos consommations terrestres. 9,3 milliards de litres d’eau en bouteille en plastique sont ainsi consommées par an en France alors que l’ensemble de la population a la chance d’avoir accès à de l’eau potable.
 
 La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à 2030. Et Akualis souhaite contribuer à cette objectif en localisant un maximum de points d’eau pour permettre à chacun de trouver facilement un point d’eau pour remplir sa gourde.
-          </pre>
+            </pre>
               </q-card-section>
             </q-card>
           </q-expansion-item>
@@ -157,14 +167,14 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
           <h3 class="">L’accès à l’eau potable, un droit de l’homme universel</h3>
           <pre>
 Véritable enjeu de santé publique, l’OMS déclare que l’accès à l’eau potable est un droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.
-</pre>
-<q-expansion-item class="" dense label="Plus d'informations..." header-class="expander">
+      </pre>
+          <q-expansion-item class="" dense label="Plus d'informations..." header-class="expander">
             <q-card>
               <q-card-section class="expander--content">
                 <pre>En France, poussés par la loi AGEC, les collectivités et établissements accueillants du public sont ainsi engagés dans le déploiement accéléré de sources d’eau potable, mais elles sont bien souvent très peu visibles et donc peu utilisées.
 
-Grâce à Akualis ces collectivités et organismes publics pourront informer plus efficacement les citoyens sur les ressources mises à leur disposition. Et les utilisateurs de l'application pourront  remplir leur gourdes en ville, dans les gares, dans les centres commerciaux en toute confiance.
-</pre>
+Grâce à Akualis ces collectivités et organismes publics pourront informer plus efficacement les citoyens sur les ressources mises à leur disposition. Et les utilisateurs de l'application pourront remplir leur gourdes en ville, dans les gares, dans les centres commerciaux en toute confiance.
+            </pre>
               </q-card-section>
             </q-card>
           </q-expansion-item>
@@ -208,12 +218,12 @@ Grâce à Akualis ces collectivités et organismes publics pourront informer plu
           <h2 class="">Qui sommes nous ?</h2>
           <pre class="text-left">Akualis s'engage à servir l'intérêt général, en mettant en avant des valeurs de transparence et de collaboration.
 
-A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un effort collectif est essentiel pour limiter la dégradation environnementale actuelle, et dotés de compétences complémentaires pour lancer le projet :
-<ul>
-<li>Pauline apporte son expertise en communication, construction du business plan et développement des partenariats stratégiques,
-</li><li>Maxime est garant de la pertinence technique de la plateforme Akualis, de son optimisation et de sa scalabilité,
-</li><li>Jérémie est passionné par l’entrepreneuriat solidaire et apporte son expérience dans la gestion de projets technologiques complexes, notamment en matière d’organisation, de budget et de planning, pour garantir la réussite de l’association dans sa mission.
-</li></ul></pre>
+A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un effort collectif est essentiel pour limiter la dégradation environnementale actuelle, et dotés de compétences complémentaires pour lancer le projet :<ul>
+          <li>Pauline apporte son expertise en communication, construction du business plan et développement des partenariats stratégiques,</li>
+          <li>Maxime est garant de la pertinence technique de la plateforme Akualis, de son optimisation et de sa scalabilité,</li>
+          <li>Jérémie est passionné par l’entrepreneuriat solidaire et apporte son expérience dans la gestion de projets technologiques complexes, notamment en matière d’organisation, de budget et de planning, pour garantir la réussite de l’association dans sa mission.</li>
+        </ul>
+      </pre>
         </div>
         <div class="col-1 col-md-3"></div>
       </div>
@@ -263,14 +273,10 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
       <div class="col-10 col-md-6">
         <h2 class="q-pt-lg">Deviens toi aussi un explorateur de l’eau !</h2>
         <pre class="">
-          En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde , réduisant ainsi votre impact environnemental !
+        En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde , réduisant ainsi votre impact environnemental !
+      </pre>
 
-L’application sera disponible très prochainement.
-
-Partage avec nous ton email pour être prévenu de son lancement.
-        </pre>
-
-        <form>
+        <!-- <form>
           <q-input outlined bg-color="white" rounded :disable="isSubmitted" :error-message="emailActiveMessage"
             :error="emailError" lazy-rules v-model="email" :rules="[emailRule]" placeholder="Rester informé par email"
             class="input-email q-mx-auto">
@@ -282,7 +288,18 @@ Partage avec nous ton email pour être prévenu de son lancement.
               </q-btn>
             </template>
           </q-input>
-        </form>
+        </form> -->
+
+        <div class="row justify-center items-center">
+          <a class="q-ma-md"
+            href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
+            style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
+              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1714435200"
+              alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+          <a class="q-ma-md" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
+            style="display: inline-block; overflow: hidden; height: 78px;"><img
+              src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="height: 78px;"></a>
+        </div>
 
         <img id="hero-logo" class="" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
       </div>
