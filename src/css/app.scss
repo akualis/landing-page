@@ -35,6 +35,10 @@
     padding: 0;
     display: flex;
     margin: 15px 5px;
+
+    @media (max-width: $breakpoint-md-min) {
+        margin: 15px 5px 15px 0px;
+    }
 }
 
 #menu a.menu-item {
@@ -42,6 +46,10 @@
     color: $primary;
     padding: 0px 15px;
     display: block;
+
+    @media (max-width: $breakpoint-md-min) {
+        padding: 0px 10px;
+    }
 }
 
 #menu a.menu-item:hover {

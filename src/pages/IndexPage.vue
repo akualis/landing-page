@@ -20,7 +20,7 @@
     <!-- <q-btn class="hero-cta cta-floating " @click="btnSmoothScrollTo('#inform')" href="#inform" color="primary" label="Découvrez Akualis" no-caps /> -->
   </div>
 
-  <section id="hero" class="full-width items-center text-center q-py-lg">
+  <section id="hero" class="full-width items-center text-center q-pb-lg">
     <div class="row full-height">
       <div class="col-1 col-md-3"></div>
       <div class="col-10 col-md-6 flex items-center justify-center content-around">
