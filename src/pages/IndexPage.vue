@@ -31,9 +31,9 @@
         <div class="row justify-center items-center">
           <a class="q-ma-md" target="_blank"
             href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
-            style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
-              src="/img/App_Store_badge_fr.png"
-              alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+            style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height:79px;"><img
+              src="/img/App_Store_badge_fr.png" width="250" height="79"
+              alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 79px;"></a>
           <a class="q-ma-md" target="_blank" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
             style="display: inline-block; overflow: hidden; height: 78px;"><img
               src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="height: 78px;"></a>
@@ -293,9 +293,9 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
         <div class="row justify-center items-center">
           <a class="q-ma-md" target="_blank"
             href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
-            style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
-              src="/img/App_Store_badge_fr.png"
-              alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+            style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 79px;"><img
+              src="/img/App_Store_badge_fr.png" width="250" height="79"
+              alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 79px;"></a>
           <a class="q-ma-md" target="_blank" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
             style="display: inline-block; overflow: hidden; height: 78px;"><img
               src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="height: 78px;"></a>
