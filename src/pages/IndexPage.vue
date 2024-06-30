@@ -2,8 +2,8 @@
   <div id="parent-menu">
     <div v-if="showToolbar" id="menu" class="menu-start bg-white text-blue">
 
-      <a href="/" alt="Accueil Akualis">
-        <img id="menu-logo" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
+      <a href="/" alt="Accueil Akualis - application répertoriant les points d'eau potable" aria-label="Accueil Akualis - application répertoriant les points d'eau potable">
+        <img id="menu-logo" src="/img/akualis-logo.png" alt="Logo de l'application Akualis répertoriant les points d'eau potable" />
       </a>
 
       <ul>
@@ -24,17 +24,17 @@
     <div class="row full-height">
       <div class="col-1 col-md-3"></div>
       <div class="col-10 col-md-6 flex items-center justify-center content-around">
-        <img id="hero-logo" class="q-mt-xl q-pt-xl" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
-        <p class="subtitle">*Akualis, inspiré du latin “Aqualis”, nom commun pour désigner une cruche</p>
-        <h1 class="q-pt-lg">Ensemble, cartographions les points d’eau potable !</h1>
-        <p class="q-pb-lg">Akualis, la seule application qui référence en temps réel les points d’eau dans le monde</p>
+        <img id="hero-logo" class="q-mt-xl q-pt-xl" src="/img/akualis-logo.png" alt="Logo de l'application Akualis répertoriant les points d'eau potable" />
+        <p class="subtitle wide-item">*Akualis, inspiré du latin “Aqualis”, nom commun pour désigner une cruche</p>
+        <p class="h1 q-pt-xl q-mt-md">Ensemble, cartographions les points d’eau potable !</p>
+        <h1 class="q-pt-md q-pb-lg small">Akualis, la seule application qui référence en temps réel les points d’eau potable dans le monde</h1>
         <div class="row justify-center items-center">
-          <a class="q-ma-md"
+          <a class="q-ma-md" target="_blank"
             href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
             style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
-              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1714435200"
+              src="/img/App_Store_badge_fr.png"
               alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
-          <a class="q-ma-md" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
+          <a class="q-ma-md" target="_blank" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
             style="display: inline-block; overflow: hidden; height: 78px;"><img
               src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="height: 78px;"></a>
         </div>
@@ -255,7 +255,7 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
           <q-carousel-slide v-for="testimonial in testimonials" :key="testimonial.name" :name="testimonial.name"
             class="column no-wrap flex-center">
             <div class="q-mb-xl text-center">
-              <img :src=testimonial.picture />
+              <img :src=testimonial.picture :alt=testimonial.alt />
               <h3>{{ testimonial.name }}</h3>
               <p>{{ testimonial.quote }}</p>
             </div>
@@ -291,17 +291,17 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
         </form> -->
 
         <div class="row justify-center items-center">
-          <a class="q-ma-md"
+          <a class="q-ma-md" target="_blank"
             href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
             style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
-              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1714435200"
+              src="/img/App_Store_badge_fr.png"
               alt="Télécharger dans l'App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
-          <a class="q-ma-md" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
+          <a class="q-ma-md" target="_blank" href="https://play.google.com/store/apps/details?id=com.akualis.app&pcampaignid=web_share"
             style="display: inline-block; overflow: hidden; height: 78px;"><img
               src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="height: 78px;"></a>
         </div>
 
-        <img id="hero-logo" class="" src="/img/akualis-logo.png" alt="Logo de l'application Akualis" />
+        <img id="hero-logo" class="" src="/img/akualis-logo.png" alt="Logo de l'application Akualis répertoriant les points d'eau potable" />
       </div>
       <div class="col-1 col-md-3"></div>
     </div>
@@ -315,7 +315,7 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
       <a style="text-decoration: underline; color: inherit;" href="mailto:hello@akualis.com"
         title="Akualis App mail">hello@akualis.com</a>
     </div>
-    <div class="float-right">© 2023 Akualis App. Tous droits réservés.</div>
+    <div class="float-right">© 2024 Akualis App. Tous droits réservés.</div>
   </q-footer>
 </template>
 
@@ -547,19 +547,19 @@ export default defineComponent({
       {
         name: 'Lyla',
         picture: '/img/portrait/akualis-lyla.webp',
-        alt: 'Photo de Lyla',
+        alt: 'Photo de Lyla - utilisatrice de l\'application Akualis pour trouver des points d\'eau potable',
         quote: 'Grâce à Akualis, je peux facilement trouver des points d’eau quand je me balade avec mes parents et remplir ma gourde plutôt qu’utiliser du plastique',
       },
       {
         name: 'Benoît',
         picture: '/img/portrait/akualis-benoit.webp',
-        alt: 'Photo de Benoît',
+        alt: 'Photo de Benoît - utilisateur de l\'application Akualis pour trouver des points d\'eau potable',
         quote: 'En rando, en vélo, en ville, Akualis me permet de recharger mes gourdes et de profiter pleinement de mes sorties sportives',
       },
       {
         name: 'Philippe',
         picture: '/img/portrait/akualis-philippe.webp',
-        alt: 'Photo de Philippe',
+        alt: 'Photo de Philippe - utilisateur de l\'application Akualis pour trouver des points d\'eau potable',
         quote: 'Akualis, au delà d’une application pratique est une application ludique et d’intérêt général'
       }
     ];
