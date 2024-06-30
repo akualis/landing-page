@@ -273,7 +273,7 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
       <div class="col-10 col-md-6">
         <h2 class="q-pt-lg">Deviens toi aussi un explorateur de l’eau !</h2>
         <pre class="">
-        En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde , réduisant ainsi votre impact environnemental !
+        En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde, réduisant ainsi votre impact environnemental !
       </pre>
 
         <!-- <form>
