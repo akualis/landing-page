@@ -58,7 +58,7 @@
 
 #menu a.active {
     // background-color: #333;
-    color: $secondary;
+    color: $accent;
     font-weight: bold;
 }
 
@@ -90,7 +90,7 @@
 
 .menu-end #menu-logo {
     height: 50px;
-    padding-bottom: 5px;
+    //padding-bottom: 5px;
     padding-left: 10px;
 }
 
@@ -103,6 +103,10 @@
     text-decoration: none;
     text-transform: none;
     cursor: pointer;
+}
+
+.hero-cta:hover {
+    background: var(--q-accent) !important;
 }
 
 .hero-cta.cta-floating {
