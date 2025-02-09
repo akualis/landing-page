@@ -417,7 +417,7 @@ p.small {
 #hero {
     text-align: center;
     position: relative;
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8)), url('/img/akualis-cover.webp');
+    background: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.78)), url('/img/akualis-cover.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -469,7 +469,7 @@ p.small {
     height: 150px;
     width: 420px;
     text-align: left;
-    background-color: $white;
+    background-color: rgba(255, 255, 255, 0.92);
     border-radius: 20px;
     padding: 20px 30px;
 
@@ -480,12 +480,12 @@ p.small {
 
 .preview-carousel-info.left {
     top: 180px;
-    left: 20px;
+    left: 0px;
 }
 
 .preview-carousel-info.right {
     top: 420px;
-    right: 20px;
+    right: 0px;
 }
 
 .preview-carousel-info.top {
@@ -509,16 +509,20 @@ p.small {
     width: 6px;
     // height: 6px;
     // width: 50px;
-    background-color: $secondary;
+    background-color: $accent;
 }
 
 .preview-carousel-button.active {
-    background-color: $primary;
+    background-color: $accent;
 }
 
 .q-carousel__arrow .q-btn .q-icon {
     font-size: 50px;
     /* Adjust this to your desired size */
+}
+
+.q-carousel__navigation-icon--inactive {
+    color: $primary !important;
 }
 
 // .preview-carousel .carousel__slide {
