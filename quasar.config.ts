@@ -88,7 +88,17 @@ export default defineConfig((ctx) => {
             lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{ts,js,mjs,cjs,vue}"',
             useFlatConfig: true
           }
-        }, { server: false }]
+        }, { server: false }],
+
+        ['vite-plugin-sitemap', {
+          hostname: 'https://akualis.com',
+          routes: ['/'],
+          lastmod: new Date(),
+          changefreq: 'monthly',
+          priority: 0.7,
+          outDir: 'dist/ssr/client',
+          generateRobotsTxt: true,
+        }]
       ]
     },
 
