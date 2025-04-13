@@ -1,6 +1,6 @@
 runtime: nodejs20
 
-autoscaling:
+automatic_scaling:
   target_cpu_utilization: 0.8
   max_instances: 2 
 
