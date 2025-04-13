@@ -1,5 +1,9 @@
 runtime: nodejs20
 
+autoscaling:
+  target_cpu_utilization: 0.8
+  max_instances: 2 
+
 handlers:
 - url: /.*
   secure: always
