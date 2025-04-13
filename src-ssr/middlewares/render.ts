@@ -9,7 +9,15 @@ import { defineSsrMiddleware } from '#q-app/wrappers';
 export default defineSsrMiddleware(({ app, resolve, render, serve }) => {
   // we capture any other Express route and hand it
   // over to Vue and Vue Router to render our page
+  console.log('process.env.VUE_ROUTER_MODE', process.env.VUE_ROUTER_MODE);
+  console.log('process.env.VUE_ROUTER_BASE', process.env.VUE_ROUTER_BASE);
+  console.log('[SSR] Capturing any other route');
+  // console.log(app.router);
+  // console.log(resolve);
+  // console.log(render);
+  // console.log(serve.static());
   app.get(resolve.urlPath('*'), (req: Request, res: Response) => {
+    console.log('[SSR] Incoming request:', req.url);
     res.setHeader('Content-Type', 'text/html');
 
     render(/* the ssrContext: */ { req, res })
