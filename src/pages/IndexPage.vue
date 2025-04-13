@@ -268,20 +268,6 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
         <h2 class="q-pt-lg">Deviens toi aussi un explorateur de l’eau !</h2>
         <pre class="">En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde, réduisant ainsi votre impact environnemental !</pre>
 
-        <!-- <form>
-          <q-input outlined bg-color="white" rounded :disable="isSubmitted" :error-message="emailActiveMessage"
-            :error="emailError" lazy-rules v-model="email" :rules="[emailRule]" placeholder="Rester informé par email"
-            class="input-email q-mx-auto">
-            <template v-slot:append>
-              <q-btn aria-label="Envoyez votre email" flat round dense @click="submitEmail" type="submit"
-                :loading="isSubmitting">
-                <img src="/img/akualis-icon.png" alt="Icône de Else pour envoyer l'adresse e-mail" width="40"
-                  height="40" />
-              </q-btn>
-            </template>
-          </q-input>
-        </form> -->
-
         <div class="row justify-center items-center">
           <a class="q-ma-md" target="_blank"
             href="https://apps.apple.com/fr/app/akualis/id6477761379?itsct=apps_box_badge&amp;itscg=30200"
@@ -330,9 +316,7 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { useMeta, useQuasar } from 'quasar';
-
-import axios from 'axios';
+import { useMeta } from 'quasar';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -342,13 +326,19 @@ export default defineComponent({
       lastScrollPosition: 0,
       previousScroll: 0,
       scrollCarouselEnabled: false,
+      isScrolledPastThreshold: false,
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', () => {
+      this.handleScroll();
+    });
   },
+
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', () => {
+      this.handleScroll();
+    });
   },
   methods: {
     handleScroll() {
@@ -361,42 +351,50 @@ export default defineComponent({
         // Scrolling down
         if (currentScrollPosition > 50 && !this.isScrolledPastThreshold) {  // Adjust the 50 value as needed
           this.isScrolledPastThreshold = true;
-          toolbar.classList.add("menu-end");
-          toolbar.classList.remove("menu-start");
+          if (toolbar) {
+            toolbar.classList.add("menu-end");
+            toolbar.classList.remove("menu-start");
+          }
         }
       } else {
         // Scrolling up
         if (currentScrollPosition <= 50 && this.isScrolledPastThreshold) {  // Adjust the 50 value as needed
           this.isScrolledPastThreshold = false;
-
-          toolbar.classList.remove("menu-end");
-          toolbar.classList.add("menu-start");
+          if (toolbar) {
+            toolbar.classList.remove("menu-end");
+            toolbar.classList.add("menu-start");
+          }
         }
       }
 
       // MENU HIGHLIGHT
       const menuItems = document.querySelectorAll('.menu-item');
-      let currentScroll = window.scrollY + window.innerHeight * 0.25;
+      const currentScroll = window.scrollY + window.innerHeight * 0.25;
       menuItems.forEach((item) => {
-        let targetSection = document.querySelector(item.getAttribute('href'));
+        const targetHref = item.getAttribute('href');
+        if (targetHref) {
+          const targetSection = document.querySelector(targetHref);
+          if (targetSection && targetSection instanceof HTMLElement) {
+            // Check for the first section specifically
+            if (item.getAttribute('href') === "#constat") {
+              if (currentScroll < 700) {
+                item.classList.remove('active');
+                return;
+              } else if (this.previousScroll > currentScroll && currentScroll > (targetSection.offsetTop + targetSection.offsetHeight)) {
+                // If scrolling up and the current position has scrolled past the end of the first section
+                item.classList.remove('active');
+                return;
+              }
+            }
 
-        // Check for the first section specifically
-        if (item.getAttribute('href') === "#constat") {
-          if (currentScroll < 700) {
-            item.classList.remove('active');
-            return;
-          } else if (this.previousScroll > currentScroll && currentScroll > (targetSection.offsetTop + targetSection.offsetHeight)) {
-            // If scrolling up and the current position has scrolled past the end of the first section
-            item.classList.remove('active');
-            return;
+
+            if (targetSection && targetSection.offsetTop <= currentScroll && (targetSection.offsetTop + targetSection.offsetHeight) > currentScroll) {
+              menuItems.forEach(el => el.classList.remove('active'));
+              item.classList.add('active');
+            }
           }
         }
 
-
-        if (targetSection && targetSection.offsetTop <= currentScroll && (targetSection.offsetTop + targetSection.offsetHeight) > currentScroll) {
-          menuItems.forEach(el => el.classList.remove('active'));
-          item.classList.add('active');
-        }
       });
 
       // // CAROUSEL
@@ -441,71 +439,14 @@ export default defineComponent({
   },
   setup() {
 
-    useMeta(() => {
-      return {
-        // 'title': 'Akualis : Trouvez. Remplissez. Protégez.', // In index.html because only one page
-        'link': [
-          { rel: 'canonical', href: 'https://akualis.com/' }
-        ]
+    const metaData = {
+      link:
+      {
+        canonical: { rel: 'canonical', href: 'https://akualis.com/' }
       }
-    })
+    };
 
-    const $q = useQuasar();
-    const email = ref('');
-    const emailError = ref(false);
-    const emailMessage = {
-      submitted: 'Votre email a bien été enregistré !',
-      invalid: 'Email invalide.',
-      error: 'Email existant ou problème de communication avec le serveur.'
-    }
-    const emailActiveMessage = ref(emailMessage.invalid);
-    const isSubmitting = ref(false);
-    const isSubmitted = ref(false);
-    const emailRule = (val: string) => {
-      if (val === '') return true;
-      // Email validation pattern
-      const pattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-      emailError.value = false;
-      return pattern.test(val) || emailMessage.invalid;
-    }
-
-    const submitEmail = async () => {
-      // Handle email submission
-      if (emailRule(email.value) === true) {
-        // Do something with the email
-        // console.log(email.value);
-        try {
-          $q.loading.show();  // Show loading spinner
-          // console.log('Email:', email.value);
-
-          isSubmitting.value = true; // disable the input field and button
-          emailError.value = false; // reset the error state
-          emailActiveMessage.value = emailMessage.invalid;
-
-          const response = await axios.post('/api/lead', { email: email.value });
-          console.log('Response:', response);
-          email.value = emailMessage.submitted;  // reset email
-          isSubmitting.value = false;
-          isSubmitted.value = true; // disable the input field and button
-          $q.notify({ type: 'positive', message: emailMessage.submitted });  // Notify success
-        } catch (error) {
-          emailActiveMessage.value = emailMessage.error;
-          emailError.value = true; // trigger the error state
-          isSubmitting.value = false;
-          isSubmitted.value = false;
-          console.error('Error making API call:', error);
-          $q.notify({ type: 'negative', message: emailMessage.error });
-        } finally {
-          $q.loading.hide();
-        }
-      } else {
-        // console.log('Invalid email');
-
-        emailActiveMessage.value = emailMessage.invalid;
-        emailError.value = true;
-        $q.notify({ type: 'negative', message: emailMessage.invalid });
-      }
-    }
+    useMeta(metaData);
 
     const socialLinks: Record<string, string> = {
       facebook: "https://www.facebook.com/profile.php?id=61573013273416",
@@ -603,15 +544,8 @@ export default defineComponent({
     ];
 
     return {
-      email,
-      emailRule,
-      submitEmail,
-      emailError,
-      emailActiveMessage,
-      isSubmitting,
-      isSubmitted,
-      appPreviewSlide: ref(appPreviews[0].alt),
-      testimonialSlide: ref(testimonials[0].name),
+      appPreviewSlide: ref(appPreviews[0]!.alt),
+      testimonialSlide: ref(testimonials[0]!.name),
       testimonials,
       appPreviews,
       goToSocial
