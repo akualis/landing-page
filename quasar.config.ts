@@ -154,6 +154,8 @@ export default defineConfig((ctx) => {
         'render' // keep this as last one
       ],
 
+      
+
       // extendPackageJson (json) {},
       // extendSSRWebserverConf (esbuildConf) {},
 

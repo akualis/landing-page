@@ -213,7 +213,7 @@ Grâce à Akualis ces collectivités et organismes publics pourront informer plu
 
 A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un effort collectif est essentiel pour limiter la dégradation environnementale actuelle, et dotés de compétences complémentaires pour lancer le projet :
 
-<strong>Pauline</strong> apporte son expertise en communication, construction du business plan et développement des partenariats stratégiques,        
+<strong>Pauline</strong> apporte son expertise en communication, construction du business plan et développement des partenariats stratégiques,
 
 <strong>Maxime</strong> est garant de la pertinence technique de la plateforme Akualis, de son optimisation et de sa scalabilité,
 
@@ -288,16 +288,6 @@ A l’origine de l’association, une équipe de 3 fondateurs convaincus qu’un
   </section>
 
   <q-footer class="bg-blue-light text-grey q-py-lg q-px-xl text-center">
-    <!-- <div class="float-left q-pb-sm">
-      <a style="text-decoration: underline; color: inherit;" href="mailto:hello@akualis.com"
-        title="Akualis App mail">hello@akualis.com</a>
-    </div>
-    
-    <div class="float-right">© 2024 Akualis App. Tous droits réservés.</div>
-   -->
-    <!-- <a style="text-decoration: underline; color: inherit;" href="/infos-legales"
-        title="CGU / mentions légales">CGU / Mentions
-        légales</a> |  -->
     <div class="row justify-between items-center">
       <div class="col-12 col-md-4 q-mb-xs">
         <a style="text-decoration: underline; color: inherit;" href="mailto:hello@akualis.com"
