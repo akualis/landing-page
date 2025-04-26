@@ -1,4 +1,5 @@
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { FiChevronDown } from 'react-icons/fi';
 
 export default function ConstatSection() {
   return (
@@ -25,33 +26,36 @@ Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de ma
       </div>
 
       {/* Constat 1 */}
-      <div className="flex flex-col md:flex-row justify-center items-center w-full p-4 mb-8">
-        <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <div className="flex flex-col md:flex-row justify-center items-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
+        <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
           <img
-            className=" rounded shadow"
+            className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
             src="/img/akualis-fountain-girl.webp"
             alt="Photo constat n°1 - Localiser les points d’eau potable est un challenge permanent"
           />
         </div>
-        <div className="w-full md:w-1/2 px-6 text-left">
-          <p className="text-blue-700 font-semibold mb-2">Constat N°1</p>
-          <h3 className="text-2xl font-bold mb-4">Localiser les points d’eau potable est un challenge permanent</h3>
-          <pre className="whitespace-pre-wrap  rounded p-4 mb-4 ">
+        <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
+          <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°1</p>
+          <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">Localiser les points d’eau potable est un challenge permanent</h3>
+          <pre className="whitespace-pre-wrap rounded p-4 mb-4">
 {`Qui n’a jamais cherché de point d’eau potable pour remplir une gourde, un biberon ou simplement pour étancher sa soif ? Et qui a finalement acheté une bouteille d’eau en plastique, sans se douter qu’une fontaine se trouvait certainement à quelques mètres ?`}
           </pre>
-          <Disclosure>
+          <Disclosure as="div" className="mb-4">
             {({ open }) => (
               <>
-                <Disclosure.Button className="py-2 px-4 bg-blue-100 rounded text-blue-700 font-medium mb-2">
-                  Plus d'informations...
-                </Disclosure.Button>
-                <Disclosure.Panel className="bg-white rounded shadow p-4">
+                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
+                  <span>Plus d'informations...</span>
+                  <FiChevronDown
+                    className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
+                  />
+                </DisclosureButton>
+                <DisclosurePanel className="bg-white rounded shadow p-4 info-panel">
                   <pre className="whitespace-pre-wrap ">
 {`La localisation de la grande majorité des fontaines est pourtant une information publique, disponible notamment dans OpenstreetMap, et plusieurs acteurs se sont déjà attachés à la réalisation de cartes les répertoriant. Cependant, aucun n’a à ce jour réussi à répondre au triple défi d’offrir une couverture géographique à l’échelle nationale, de garantir l’exhaustivité des données, tout en permettant une mise à jour de l’information simple et en temps réel.
 
 Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et participative. Une approche gaming et des fonctionnalités avancées viendront renforcer la volonté de chacun à contribuer.`}
                   </pre>
-                </Disclosure.Panel>
+                </DisclosurePanel>
               </>
             )}
           </Disclosure>
@@ -59,33 +63,36 @@ Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et
       </div>
 
       {/* Constat 2 */}
-      <div className="flex flex-col md:flex-row-reverse justify-center items-center w-full bg-white p-4 mb-8">
-        <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <div className="flex flex-col md:flex-row-reverse justify-center items-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
+        <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
           <img
-            className=" rounded shadow"
+            className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
             src="/img/akualis-no-plastic-ocean.webp"
             alt="Photo constat n°2 - Réduire l’usage du plastique est une priorité"
           />
         </div>
-        <div className="w-full md:w-1/2 px-6 text-left">
-          <p className="text-blue-700 font-semibold mb-2">Constat N°2</p>
-          <h3 className="text-2xl font-bold mb-4">Réduire l’usage du plastique est une priorité</h3>
-          <pre className="whitespace-pre-wrap  rounded p-4 mb-4 ">
+        <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
+          <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°2</p>
+          <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">Réduire l’usage du plastique est une priorité</h3>
+          <pre className="whitespace-pre-wrap rounded p-4 mb-4">
 {`Savez-vous que, tous les ans, 6,5 millions de tonnes de plastique sont déversées dans l’océan, et que les bouteilles en plastique font partie du top 10 des déchets récupérés sur les plages ?`}
           </pre>
-          <Disclosure>
+          <Disclosure as="div" className="mb-4">
             {({ open }) => (
               <>
-                <Disclosure.Button className="py-2 px-4 bg-blue-100 rounded text-blue-700 font-medium mb-2">
-                  Plus d'informations...
-                </Disclosure.Button>
-                <Disclosure.Panel className="bg-white rounded shadow p-4">
+                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
+                  <span>Plus d'informations...</span>
+                  <FiChevronDown
+                    className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
+                  />
+                </DisclosureButton>
+                <DisclosurePanel className="bg-white rounded shadow p-4 info-panel">
                   <pre className="whitespace-pre-wrap ">
 {`D’où viennent-elles ? En grande partie, de nos consommations terrestres. 9,3 milliards de litres d’eau en bouteille en plastique sont ainsi consommées par an en France alors que l’ensemble de la population a la chance d’avoir accès à de l’eau potable.
 
 La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50% le nombre de bouteilles en plastique à usage unique d’ici à 2030. Et Akualis souhaite contribuer à cette objectif en localisant un maximum de points d’eau pour permettre à chacun de trouver facilement un point d’eau pour remplir sa gourde.`}
                   </pre>
-                </Disclosure.Panel>
+                </DisclosurePanel>
               </>
             )}
           </Disclosure>
@@ -93,33 +100,36 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
       </div>
 
       {/* Constat 3 */}
-      <div className="flex flex-col md:flex-row justify-center items-center w-full bg-white p-4 mb-8">
-        <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <div className="flex flex-col md:flex-row justify-center items-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
+        <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
           <img
-            className=" rounded shadow"
+            className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
             src="/img/akualis-carte-interactive.webp"
             alt="Photo constat n°3 - L’accès à l’eau potable, un droit de l’homme universel"
           />
         </div>
-        <div className="w-full md:w-1/2 px-6 text-left">
-          <p className="text-blue-700 font-semibold mb-2">Constat N°3</p>
-          <h3 className="text-2xl font-bold mb-4">L’accès à l’eau potable, un droit de l’homme universel</h3>
-          <pre className="whitespace-pre-wrap  rounded p-4 mb-4 ">
+        <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
+          <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°3</p>
+          <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">L’accès à l’eau potable, un droit de l’homme universel</h3>
+          <pre className="whitespace-pre-wrap rounded p-4 mb-4">
 {`Véritable enjeu de santé publique, l’OMS déclare que l’accès à l’eau potable est un droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.`}
           </pre>
-          <Disclosure>
+          <Disclosure as="div" className="mb-4">
             {({ open }) => (
               <>
-                <Disclosure.Button className="py-2 px-4 bg-blue-100 rounded text-blue-700 font-medium mb-2">
-                  Plus d'informations...
-                </Disclosure.Button>
-                <Disclosure.Panel className="bg-white rounded shadow p-4">
+                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
+                  <span>Plus d'informations...</span>
+                  <FiChevronDown
+                    className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
+                  />
+                </DisclosureButton>
+                <DisclosurePanel className="bg-white rounded shadow p-4 info-panel">
                   <pre className="whitespace-pre-wrap ">
 {`En France, poussés par la loi AGEC, les collectivités et établissements accueillants du public sont ainsi engagés dans le déploiement accéléré de sources d’eau potable, mais elles sont bien souvent très peu visibles et donc peu utilisées.
 
 Grâce à Akualis ces collectivités et organismes publics pourront informer plus efficacement les citoyens sur les ressources mises à leur disposition. Et les utilisateurs de l'application pourront remplir leur gourdes en ville, dans les gares, dans les centres commerciaux en toute confiance.`}
                   </pre>
-                </Disclosure.Panel>
+                </DisclosurePanel>
               </>
             )}
           </Disclosure>

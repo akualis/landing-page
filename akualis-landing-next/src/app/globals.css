@@ -25,12 +25,26 @@
 }
 
 @theme {
-  --font-display: 'Poppins', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-  --font-family: 'Poppins', sans-serif;
+  --background: #f1f5fb;
+  --foreground: #464646;
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Tailwind custom colors as CSS variables */
+  --color-primary: #0a294f;
+  --color-secondary: #464646;
+  --color-accent: #00b7df;
+  --color-blue: #0a294f;
+  --color-grey: #464646;
+  --color-purple: #9600FF;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-blue-light: #F1F5FB;
+  --color-green-light: #C8E6C9;
+  --color-dark: #1D1D1D;
+  --color-dark-page: #121212;
+  --color-positive: #21BA45;
+  --color-negative: #C10015;
+  --color-info: #31CCEC;
+  --color-warning: #F2C037;
 }
 
 /* @media (prefers-color-scheme: dark) {

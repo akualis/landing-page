@@ -1,23 +1,24 @@
-$primary : #0a294f;
-$secondary : #464646;
-$accent : #00b7df;
+// edit colors in scr/app/global.css
+$primary: var(--color-primary);
+$secondary: var(--color-secondary);
+$accent: var(--color-accent);
 
-$blue : #0a294f;
-$grey : #464646;
-$purple : #9600FF;
-$white: #FFFFFF;
-$black: #000000;
+$blue: var(--color-blue);
+$grey: var(--color-grey);
+$purple: var(--color-purple);
+$white: var(--color-white);
+$black: var(--color-black);
 
-$blue-light: #F1F5FB;
-$green-light: #C8E6C9;
+$blue-light: var(--color-blue-light);
+$green-light: var(--color-green-light);
 
-$dark : #1D1D1D;
-$dark-page : #121212;
+$dark: var(--color-dark);
+$dark-page: var(--color-dark-page);
 
-$positive : #21BA45;
-$negative : #C10015;
-$info : #31CCEC;
-$warning : #F2C037;
+$positive: var(--color-positive);
+$negative: var(--color-negative);
+$info: var(--color-info);
+$warning: var(--color-warning);
 
 $breakpoint-sm : '576px';
 $breakpoint-md : '768px';
@@ -298,28 +299,20 @@ p.small {
 
 // EXPANSION
 
-.expander {
-  padding: 0px;
-
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  color: $secondary;
-  white-space: pre-wrap;
-
-  @media (max-width: $breakpoint-md) {
-      font-size: 16px;
-  }
+.info {
+  color: $blue;
+  cursor: pointer;
 }
 
-.expander:hover {
-  // font-weight: bold;
+.info:hover {
+  color: $accent;
 }
 
-.expander--content {
-  padding: 0px;
+.info-panel {
+  // animation
+  transition: all 2s ease-in-out;
 }
+
 
 // miscellaneous
 
