@@ -460,6 +460,11 @@ p.small {
 .preview-carousel {
   margin: auto;
   max-width: 950px;
+  width: 100%;
+
+  // @media (max-width: $breakpoint-md) {
+  //   max-width: 100%;
+  // }
 }
 
 #concept .q-carousel {
@@ -509,7 +514,7 @@ p.small {
 .preview-carousel-info.top {
   position: relative;
   width: 350px;
-  top: -20px;
+  // top: -20px;
 }
 
 .preview-carousel-info p {

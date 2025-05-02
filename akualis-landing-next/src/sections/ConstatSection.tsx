@@ -26,7 +26,7 @@ Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de ma
       </div>
 
       {/* Constat 1 */}
-      <div className="flex flex-col md:flex-row justify-center items-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
+      <div className="flex flex-col md:flex-row justify-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
         <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
           <img
             className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
@@ -63,7 +63,7 @@ Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et
       </div>
 
       {/* Constat 2 */}
-      <div className="flex flex-col md:flex-row-reverse justify-center items-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
+      <div className="flex flex-col md:flex-row-reverse justify-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
         <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
           <img
             className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
@@ -100,7 +100,7 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
       </div>
 
       {/* Constat 3 */}
-      <div className="flex flex-col md:flex-row justify-center items-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
+      <div className="flex flex-col md:flex-row justify-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
         <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
           <img
             className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
@@ -108,7 +108,7 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
             alt="Photo constat n°3 - L’accès à l’eau potable, un droit de l’homme universel"
           />
         </div>
-        <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
+        <div className="w-full md:w-1/2 px-0 md:px-6 text-left self-start">
           <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°3</p>
           <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">L’accès à l’eau potable, un droit de l’homme universel</h3>
           <pre className="whitespace-pre-wrap rounded p-4 mb-4">

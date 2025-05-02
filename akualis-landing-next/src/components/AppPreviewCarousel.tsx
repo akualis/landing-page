@@ -17,7 +17,7 @@ export default function AppPreviewCarousel({ appPreviews } : AppPreviews) {
       {appPreviews.map((appPreview) => (
         <SwiperSlide key={appPreview.alt}>
           {/* Mobile: Top info */}
-          <span className="preview-carousel-info block mb-4 md:hidden">
+          <span className="preview-carousel-info top block mb-4 m-auto md:hidden">
             <p className="bold">{appPreview.info.left.title}</p>
             <p className="small">{appPreview.info.left.description}</p>
           </span>

@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="w-full flex flex-col items-center text-center pb-8"
+      className="w-full flex flex-col items-center text-center pb-8 p-2 md:px-0"
     >
       <div className="flex flex-col md:flex-row w-full h-full">
         <div className="flex-1"></div>
@@ -29,7 +29,7 @@ export default function HeroSection() {
             Akualis, la seule application qui référence en temps réel les points
             d’eau potable dans le monde
           </h1>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center flex-col md:flex-row gap-4">
             <a
               className="mx-2"
               target="_blank"
