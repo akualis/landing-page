@@ -13,8 +13,8 @@ export default function FooterSection() {
   }
 
   return (
-    <footer className="text-grey py-8 px-12 text-center">
-      <div className="flex flex-col md:flex-row justify-between items-center">
+    <footer className="text-grey py-4 md:py-8 px-12 text-center">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-1">
         <div className="w-full md:w-1/3 mb-2 md:mb-0">
           <a
             href="mailto:hello@akualis.com"

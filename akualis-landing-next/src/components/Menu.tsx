@@ -3,45 +3,44 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Menu() {
-
   const [showToolbar, setShowToolbar] = useState(true);
-    const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);
+  const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);
+  const [hideFloatingCTA, setHideFloatingCTA] = useState(false);
 
-    // Smooth scroll handler
-    const smoothScrollTo = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      const href = e.currentTarget.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const el = document.getElementById(href.substring(1));
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+  // Smooth scroll handler
+  const smoothScrollTo = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const el = document.getElementById(href.substring(1));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Scroll logic for menu and floating CTA
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      setIsScrolledPastThreshold(scrollTop > 50);
+
+      // Check if #inform is in view
+      const informEl = document.getElementById('inform');
+      let informInView = false;
+      if (informEl) {
+        const rect = informEl.getBoundingClientRect();
+        informInView = rect.top < window.innerHeight && rect.bottom > 0;
       }
+
+      // Hide CTA if scrolled > 90% or #inform is in view
+      setHideFloatingCTA(scrollPercent > 0.9 || informInView);
     };
 
-    // Scroll logic for menu
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollPosition =
-          window.pageYOffset || document.documentElement.scrollTop;
-        setIsScrolledPastThreshold(currentScrollPosition > 50);
-      };
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Carousel logic (simple, not animated)
-    const nextPreview = () =>
-      setAppPreviewSlide((s) => (s + 1) % appPreviews.length);
-    const prevPreview = () =>
-      setAppPreviewSlide(
-        (s) => (s - 1 + appPreviews.length) % appPreviews.length,
-      );
-
-    const nextTestimonial = () =>
-      setTestimonialSlide((s) => (s + 1) % testimonials.length);
-    const prevTestimonial = () =>
-      setTestimonialSlide(
-        (s) => (s - 1 + testimonials.length) % testimonials.length,
-      );
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div id="parent-menu">
@@ -115,7 +114,7 @@ export default function Menu() {
               </li>
             </ul>
             <a
-              className="hero-cta hidden md:inline-block rounded-full px-4 py-2 font-semibold bg-accent text-white"
+              className="hero-cta hidden md:inline-block rounded-full font-semibold bg-accent text-white"
               onClick={smoothScrollTo}
               href="#inform"
             >
@@ -123,13 +122,13 @@ export default function Menu() {
             </a>
           </div>
         )}
-        <a
-          className="hero-cta cta-floating md:hidden fixed bottom-4 right-4 rounded-full px-4 py-2 font-semibold bg-accent text-white"
-          onClick={smoothScrollTo}
-          href="#inform"
-        >
-          Découvrez Akualis
-        </a>
+        {!hideFloatingCTA && (
+          <a
+            className="hero-cta cta-floating md:hidden w-auto fixed rounded-full font-semibold bg-accent text-white"
+            onClick={smoothScrollTo}
+            href="#inform"
+          >Découvrez Akualis</a>
+        )}
       </div>
   );
 }

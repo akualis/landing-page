@@ -47,8 +47,9 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="block md:hidden mt-12">
-          {/* TestimonialCarousel component here */}
+        {/* Testimonial mobile */}
+        <div className="block md:hidden w-full">
+          <p className="text-lg text-accent subtitle">Témoignages</p>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>

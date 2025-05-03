@@ -1,5 +1,5 @@
 import AppPreviewCarousel from "@/components/AppPreviewCarousel";
-import PreviewCarousel from "@/components/PreviewCarousel";
+// import PreviewCarousel from "@/components/PreviewCarousel";
 
 
 export default function ConceptSection() {
