@@ -11,7 +11,7 @@ export default function HeroSection() {
         <div className="flex-[2] flex flex-col items-center justify-center">
           <Image
             id="hero-logo"
-            className="mt-12 pt-12"
+            className="mt-2 md:mt-12 pt-12"
             src="/img/akualis-logo.webp"
             alt="Logo Akualis"
             width={500} // Adjust width as needed
