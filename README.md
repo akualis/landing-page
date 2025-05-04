@@ -1,8 +1,8 @@
 # Akualis (akualis-landing-page)
 Akualis landing page
 - host : Google App Engine
-- backend : NodeJS - Express (via Quasar SSR mode)
-- frontend : Vue.js - quasar.dev
+- backend : NodeJS - NextJS
+- frontend : React - NextJS
 
 ## Install the dependencies
 ```sh
@@ -17,11 +17,6 @@ npm run dev
 ### Lint the files
 ```sh
 npm run lint
-```
-
-### Format the files
-```sh
-npm run format
 ```
 
 ### Test locally in App Engine Environement
