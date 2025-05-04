@@ -7,7 +7,7 @@ export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
   // const [lang, setLang] = useState<'fr' | 'en'>('fr');
 
-  const toggleMenu = () => setMenuOpen((open) => !open);
+  // const toggleMenu = () => setMenuOpen((open) => !open);
   // const toggleLang = () => setLang((l) => (l === 'fr' ? 'en' : 'fr'));
 
   const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);

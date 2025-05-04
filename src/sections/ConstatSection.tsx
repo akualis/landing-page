@@ -40,15 +40,15 @@ Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de ma
           />
         </div>
         <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
-          <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°1</p>
-          <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">Localiser les points d’eau potable est un challenge permanent</h3>
+          <p className="text-blue-700 font-semibold mb-2 px-4">Constat N°1</p>
+          <h3 className="text-2xl font-bold mb-4 px-4">Localiser les points d’eau potable est un challenge permanent</h3>
           <pre className="whitespace-pre-wrap rounded p-4 mb-4">
 {`Qui n’a jamais cherché de point d’eau potable pour remplir une gourde, un biberon ou simplement pour étancher sa soif ? Et qui a finalement acheté une bouteille d’eau en plastique, sans se douter qu’une fontaine se trouvait certainement à quelques mètres ?`}
           </pre>
           <Disclosure as="div" className="mb-4">
             {({ open }) => (
               <>
-                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
+                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-4 rounded info font-medium mb-2">
                   <span>Plus d’informations...</span>
                   <FiChevronDown
                     className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
@@ -80,15 +80,15 @@ Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et
           />
         </div>
         <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
-          <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°2</p>
-          <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">Réduire l’usage du plastique est une priorité</h3>
+          <p className="text-blue-700 font-semibold mb-2 px-4">Constat N°2</p>
+          <h3 className="text-2xl font-bold mb-4 px-4">Réduire l’usage du plastique est une priorité</h3>
           <pre className="whitespace-pre-wrap rounded p-4 mb-4">
 {`Savez-vous que, tous les ans, 6,5 millions de tonnes de plastique sont déversées dans l’océan, et que les bouteilles en plastique font partie du top 10 des déchets récupérés sur les plages ?`}
           </pre>
           <Disclosure as="div" className="mb-4">
             {({ open }) => (
               <>
-                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
+                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-4 rounded info font-medium mb-2">
                   <span>Plus d’informations...</span>
                   <FiChevronDown
                     className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
@@ -120,15 +120,15 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
           />
         </div>
         <div className="w-full md:w-1/2 px-0 md:px-6 text-left self-start">
-          <p className="text-blue-700 font-semibold mb-2 px-2 md:px-4">Constat N°3</p>
-          <h3 className="text-2xl font-bold mb-4 px-2 md:px-4">L’accès à l’eau potable, un droit de l’homme universel</h3>
+          <p className="text-blue-700 font-semibold mb-2 px-4">Constat N°3</p>
+          <h3 className="text-2xl font-bold mb-4 px-4">L’accès à l’eau potable, un droit de l’homme universel</h3>
           <pre className="whitespace-pre-wrap rounded p-4 mb-4">
 {`Véritable enjeu de santé publique, l’OMS déclare que l’accès à l’eau potable est un droit de l’homme universel et demande aux Etats de faciliter l’accès à des fontaines publiques.`}
           </pre>
           <Disclosure as="div" className="mb-4">
             {({ open }) => (
               <>
-                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
+                <DisclosureButton className="group flex w-full items-center justify-between py-2 px-4 rounded info font-medium mb-2">
                   <span>Plus d’informations...</span>
                   <FiChevronDown
                     className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
