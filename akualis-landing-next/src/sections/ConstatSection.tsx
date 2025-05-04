@@ -1,9 +1,11 @@
+'use client';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { FiChevronDown } from 'react-icons/fi';
+import Image from "next/image";
 
 export default function ConstatSection() {
   return (
-    <section id="constat" className="w-full bg-white flex flex-col items-center text-center py-14">
+    <section id="constat" className="w-full bg-white flex flex-col items-center text-center py-14 scroll-mt-14">
       {/* Mission */}
       <div className="flex flex-row pb-14 w-full">
         <div className="hidden md:block md:w-1/4" />
@@ -28,10 +30,13 @@ Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de ma
       {/* Constat 1 */}
       <div className="flex flex-col md:flex-row justify-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
         <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
-          <img
+          <Image
             className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
             src="/img/akualis-fountain-girl.webp"
             alt="Photo constat n°1 - Localiser les points d’eau potable est un challenge permanent"
+            width={1920} // Adjust as needed
+            height={1080} // Adjust as needed
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
@@ -44,7 +49,7 @@ Ensemble, façonnons un monde où l'accès à l'eau potable est à portée de ma
             {({ open }) => (
               <>
                 <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
-                  <span>Plus d'informations...</span>
+                  <span>Plus d’informations...</span>
                   <FiChevronDown
                     className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
                   />
@@ -65,10 +70,13 @@ Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et
       {/* Constat 2 */}
       <div className="flex flex-col md:flex-row-reverse justify-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
         <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
-          <img
+          <Image
             className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
             src="/img/akualis-no-plastic-ocean.webp"
             alt="Photo constat n°2 - Réduire l’usage du plastique est une priorité"
+            width={800} // Adjust as needed
+            height={531} // Adjust as needed
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="w-full md:w-1/2 px-0 md:px-6 text-left">
@@ -81,7 +89,7 @@ Avec Akualis nous répondrons à ces 3 enjeux grâce à notre app interactive et
             {({ open }) => (
               <>
                 <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
-                  <span>Plus d'informations...</span>
+                  <span>Plus d’informations...</span>
                   <FiChevronDown
                     className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
                   />
@@ -102,10 +110,13 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
       {/* Constat 3 */}
       <div className="flex flex-col md:flex-row justify-center w-full px-2 md:px-4 py-4 mb-8 gap-4">
         <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
-          <img
+          <Image
             className="w-full max-w-xs md:max-w-full rounded shadow object-cover"
             src="/img/akualis-carte-interactive.webp"
             alt="Photo constat n°3 - L’accès à l’eau potable, un droit de l’homme universel"
+            width={1572} // Adjust as needed
+            height={1168} // Adjust as needed
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="w-full md:w-1/2 px-0 md:px-6 text-left self-start">
@@ -118,7 +129,7 @@ La France s’est d’ailleurs donnée pour objectif ambitieux de réduire de 50
             {({ open }) => (
               <>
                 <DisclosureButton className="group flex w-full items-center justify-between py-2 px-2 md:px-4 rounded info font-medium mb-2">
-                  <span>Plus d'informations...</span>
+                  <span>Plus d’informations...</span>
                   <FiChevronDown
                     className={`size-5 ml-2 transition-transform duration-200 ${open ? 'rotate-180' : ''} text-blue group-data-hover:text-accent`}
                   />

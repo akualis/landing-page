@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 
@@ -27,7 +28,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="w-full flex flex-col items-center text-center py-14">
+    <section id="testimonials" className="w-full flex flex-col items-center text-center py-14 scroll-mt-14">
         <div className="hidden md:block w-full px-4">
           <p className="text-lg text-accent subtitle">Témoignages</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-8">

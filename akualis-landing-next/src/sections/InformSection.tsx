@@ -1,18 +1,16 @@
-'use client';
-
 import Image from 'next/image';
 
 export const InformSection = () => {
   return (
-    <section id="inform" className="w-full flex flex-col items-center text-center mt-6 py-14 px-4">
+    <section id="inform" className="w-full flex flex-col items-center text-center mt-6 py-14 px-4 scroll-mt-14">
       <div className="w-full max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-semibold">
           Deviens toi aussi un explorateur de l’eau !
         </h2>
         <p className="mt-6 leading-relaxed whitespace-pre-line">
-          En téléchargeant Akualis, vous aurez l'opportunité unique de contribuer à la création
+          En téléchargeant Akualis, vous aurez l’opportunité unique de contribuer à la création
           de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant
-          de nouvelles sources d'eau et en confirmant la qualité de celles déjà répertoriées. Carte
+          de nouvelles sources d’eau et en confirmant la qualité de celles déjà répertoriées. Carte
           dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde,
           réduisant ainsi votre impact environnemental !
         </p>

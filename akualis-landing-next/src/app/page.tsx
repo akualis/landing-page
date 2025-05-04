@@ -1,4 +1,3 @@
-'use client';
 import './theme.scss';
 import ConstatSection from '@/sections/ConstatSection';
 import TeamSection from '@/sections/TeamSection';

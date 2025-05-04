@@ -1,8 +1,10 @@
+'use client';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 export default function AppPreviewCarousel({ appPreviews } : AppPreviews) {
   return (
@@ -23,10 +25,13 @@ export default function AppPreviewCarousel({ appPreviews } : AppPreviews) {
           </span>
           {/* Image */}
           <div className="text-center mb-8">
-            <img
+            <Image
               src={appPreview.picture}
               alt={appPreview.alt}
+              width={440} // Adjust width as needed
+              height={888} // Adjust height as needed
               className="h-[580px] md:h-[540px] mx-auto"
+              style={{ objectFit: "contain" }}
             />
           </div>
           {/* Desktop: Left info */}

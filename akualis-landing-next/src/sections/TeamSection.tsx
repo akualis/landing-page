@@ -4,7 +4,7 @@ export default function TeamSection() {
       <div className="flex flex-row mt-14 w-full">
         <div className="hidden md:block md:w-1/6" />
         <div className="w-full md:w-4/6 px-4">
-          <p className="text-lg text-blue-700 font-semibold mb-2 subtitle">L'équipe</p>
+          <p className="text-lg text-blue-700 font-semibold mb-2 subtitle">L’équipe</p>
           <h2 className="text-3xl font-bold mb-6">Qui sommes nous ?</h2>
           <pre className="whitespace-pre-wrap text-left rounded p-4 text-base">
 {`Akualis s'engage à servir l'intérêt général, en mettant en avant des valeurs de transparence et de collaboration.

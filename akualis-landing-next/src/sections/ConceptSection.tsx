@@ -73,9 +73,9 @@ export default function ConceptSection() {
   return (
     <section
       id="concept"
-      className="w-full flex flex-col items-center text-center py-14"
+      className="w-full flex flex-col items-center text-center py-14 scroll-mt-14"
     >
-      <div className="mt-12 md:mt-24 flex flex-col md:flex-row w-full justify-center">
+      <div className="flex flex-col md:flex-row w-full justify-center">
         <div className="md:w-2/12" />
         <div className="w-full md:w-8/12">
           <p className="text-lg text-accent mb-2 subtitle">Le concept</p>

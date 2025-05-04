@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from "next/image";
 
 export default function PreviewCarousel ({appPreviews} : AppPreviews) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,10 +27,13 @@ export default function PreviewCarousel ({appPreviews} : AppPreviews) {
         </div>
 
         {/* Image */}
-        <img
+        <Image
           src={preview.picture}
           alt={preview.alt}
+          width={440} // Adjust as needed for your layout
+          height={888} // Adjust as needed for your layout
           className="w-full max-w-md object-contain transition-transform duration-500 h-[580px] md:h-[540px]"
+          style={{ objectFit: "contain" }}
         />
 
         {/* Desktop (left + right info) */}

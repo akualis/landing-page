@@ -33,8 +33,8 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             <Image
               src={testimonial.picture}
               alt={testimonial.alt || `Photo de ${testimonial.name}`}
-              width={80}
-              height={80}
+              width={180}
+              height={180}
               className="rounded-full mb-4"
             />
             <h3 className="text-lg font-semibold mb-2">{testimonial.name}</h3>
