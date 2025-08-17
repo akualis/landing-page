@@ -1,16 +1,35 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { notFound } from 'next/navigation';
 import "../globals.css";
 import { getTranslations } from "@/utils/i18n";
 
+// --- Configuration de l'internationalisation ---
+const supportedLangs = ['en', 'fr'];
+
+export async function generateStaticParams() {
+  return supportedLangs.map((lang) => ({ lang }));
+}
+
+function isValidLang(lang: string): lang is 'en' | 'fr' {
+  return supportedLangs.includes(lang);
+}
+
+// --- Metadonnées (avec le type corrigé) ---
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: string };
+  // CORRECTION : params est une promesse qui résout en { lang: string }
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
-  const lang = (await params)?.lang;
-  const i18n = await getTranslations(lang as keyof typeof getTranslations);
+  // La logique `await` est maintenant cohérente avec le type
+  const { lang } = await params;
 
+  if (!isValidLang(lang)) {
+    notFound();
+  }
+
+  const i18n = await getTranslations(lang);
   const md = i18n.metadata ?? {};
 
   return {
@@ -31,7 +50,7 @@ export async function generateMetadata({
   };
 }
 
-// Move viewport to its own export
+// --- Viewport (inchangé) ---
 export const viewport: Viewport = {
   userScalable: true,
   initialScale: 1,
@@ -40,19 +59,26 @@ export const viewport: Viewport = {
   width: "device-width",
 };
 
+// --- Layout Principal (RootLayout avec le type corrigé) ---
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params: { lang: string };
-}>) {
-  const lang = (await params)?.lang;
+  // CORRECTION : params est aussi une promesse ici
+  params: Promise<{ lang: string }>;
+}) {
+  // La logique `await` est maintenant cohérente avec le type
+  const { lang } = await params;
+
+  if (!isValidLang(lang)) {
+    notFound();
+  }
 
   return (
     <html lang={lang}>
       <body>
-        {/* Google Analytics with next/script */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RG5E0NN3JN"
           strategy="afterInteractive"

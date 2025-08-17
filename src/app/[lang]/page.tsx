@@ -9,11 +9,15 @@ import ConceptSection from '@/sections/ConceptSection';
 import { InformSection } from '@/sections/InformSection';
 import { getTranslations } from '@/utils/i18n';
 
-export default async function HomePage(
-  { params }: Readonly<{ params: { lang: string } }>,
-) {
-  const { lang } = await params
-  const i18n = await getTranslations(lang as keyof typeof getTranslations);
+// On s'aligne sur le typage du layout.tsx pour satisfaire le type interne "PageProps" de Next.js
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ lang: string }>; // 1. On type params comme une Promise
+}) {
+  // 2. On utilise "await" pour résoudre la promesse et obtenir l'objet
+  const { lang } = await params;
+  const i18n = await getTranslations(lang as 'en' | 'fr');
 
   return (
     <>
