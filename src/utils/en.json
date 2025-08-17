@@ -1,0 +1,202 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "menu": {
+    "concept": "Concept",
+    "mission": "Mission",
+    "team": "Team",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "webapp": "Webapp",
+    "cta": "Discover Akualis",
+    "homeAria": "Akualis Home",
+    "logoAlt": "Akualis Logo",
+    "openAria": "Open menu",
+    "closeAria": "Close menu"
+  },
+  "metadata": {
+    "metadataBase": "https://akualis.com",
+    "title": "Akualis : Find. Refill. Protect.",
+    "description": "Akualis is an app that guides you to the nearest safe drinking water sources, helping reduce your ecological footprint while staying hydrated. Join our community promoting more sustainable and eco-friendly water consumption.",
+    "keywords": "Water, Drinking water, Public fountains, Refill bottle, Reduce plastic, Akualis app, Sustainable hydration",
+    "openGraph": {
+      "title": "Akualis",
+      "siteName": "Akualis : Find. Refill. Protect.",
+      "description": "Akualis guides you to the nearest drinking water sources and helps reduce single-use plastic usage.",
+      "type": "website",
+      "images": ["/img/akualis-social-share.png"],
+      "url": "https://akualis.com"
+    },
+    "icons": {
+      "icon": [
+        { "url": "/icons/favicon-128x128.png", "sizes": "128x128", "type": "image/png" },
+        { "url": "/icons/favicon-96x96.png", "sizes": "96x96", "type": "image/png" },
+        { "url": "/icons/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+        { "url": "/icons/favicon-16x16.png", "sizes": "16x16", "type": "image/png" },
+        { "url": "/favicon.ico", "type": "image/x-icon" }
+      ]
+    },
+    "other": {
+      "apple-itunes-app": "app-id=6477761379"
+    }
+  },
+  "hero": {
+    "title": "Together, let's map the drinking water points!",
+    "subtitle": "*Akualis, inspired by the Latin “Aqualis”, a common noun for a water jug",
+    "lead": "Akualis, the only application that lists drinking water points worldwide in real-time",
+    "logoAlt": "Akualis Logo",
+    "appStoreAlt": "Download on the App Store",
+    "playAlt": "Get it on Google Play",
+    "ctaButton": "Learn More"
+  },
+  "footer": {
+    "email": "hello@akualis.com",
+    "emailTitle": "Akualis App mail",
+    "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61573013273416",
+      "linkedin": "https://www.linkedin.com/company/akualis",
+      "instagram": "https://www.instagram.com/akualis_fountain/"
+    },
+    "copyright": "© 2025 Akualis. All rights reserved."
+  },
+  "blog": {
+    "readMore": "Read More"
+  },
+  "constat": {
+    "missionTitle": "Our Mission",
+    "missionSubtitle": "Simplifying and supporting access to drinking water",
+    "missionParagraph": "As the need to reduce plastic use becomes urgent and heatwaves become more frequent, locating drinking water points, in both urban and rural areas, is a major challenge.\n\nAkualis's mission is to identify and make all drinking water points accessible by mapping them, and to promote responsible consumption of this precious resource.\n\nAkualis is not just a location tool; it is a collaborative platform that invites everyone to discover and share unknown water points or to validate those already listed. Thus, the database is enriched in real-time, offering reliable and up-to-date access to drinking water sources.\n\nThe intuitive and fun Akualis mobile application is more than just a tool; it's an adventure where each user becomes a water explorer.\n\nTogether, let's shape a world where access to drinking water is within everyone's reach.",
+    "constat1Label": "Observation #1",
+    "constat1Title": "Locating drinking water points is a constant challenge",
+    "constat1ImageAlt": "Photo observation #1 - Locating drinking water points is a constant challenge",
+    "constat1Text": "Who hasn't looked for a drinking water point to fill a water bottle, a baby bottle, or simply to quench their thirst? And who ended up buying a plastic water bottle, unaware that a fountain was likely just a few meters away?",
+    "constat1Disclosure": "The location of the vast majority of fountains is public information, available notably on OpenStreetMap, and several actors have already undertaken the task of creating maps listing them. However, to date, none have succeeded in meeting the triple challenge of offering nationwide geographical coverage, guaranteeing the completeness of the data, while allowing for simple, real-time information updates.\n\nWith Akualis, we will address these three challenges thanks to our interactive and participative app. A gaming approach and advanced features will strengthen everyone's desire to contribute.",
+    "constat2Label": "Observation #2",
+    "constat2Title": "Reducing plastic use is a priority",
+    "constat2ImageAlt": "Photo observation #2 - Reducing plastic use is a priority",
+    "constat2Text": "Did you know that every year, 6.5 million tons of plastic are dumped into the ocean, and that plastic bottles are among the top 10 items of waste collected on beaches?",
+    "constat2Disclosure": "Where do they come from? Largely from our consumption on land. 9.3 billion liters of bottled water are consumed annually in France, even though the entire population is fortunate enough to have access to drinking water.\n\nFrance has set an ambitious goal to reduce the number of single-use plastic bottles by 50% by 2030. And Akualis wants to contribute to this goal by locating as many water points as possible to allow everyone to easily find a place to fill their water bottle.",
+    "constat3Label": "Observation #3",
+    "constat3Title": "Access to drinking water, a universal human right",
+    "constat3ImageAlt": "Photo observation #3 - Access to drinking water, a universal human right",
+    "constat3Text": "A true public health issue, the WHO declares that access to safe drinking water is a universal human right and asks states to facilitate access to public fountains.",
+    "constat3Disclosure": "In France, driven by the AGEC law, local authorities and public establishments are committed to the accelerated deployment of drinking water sources, but they are often not very visible and therefore little used.\n\nThanks to Akualis, these communities and public bodies will be able to more effectively inform citizens about the resources available to them. And app users will be able to fill their water bottles in the city, in train stations, in shopping centers with complete confidence.",
+    "numbersSectionTitle": "IN FIGURES",
+    "numbersSectionSubtitle": "The challenge of better water point location",
+    "number1Value": "25",
+    "number1Unit": "million",
+    "number1Text": "plastic water bottles are consumed per day in France",
+    "number2Value": "75",
+    "number2Unit": "%",
+    "number2Text": "of tourists buy plastic bottles during their stay",
+    "number3Value": "2",
+    "number3Unit": "liters",
+    "number3Text": "of water as well as 42 L of gas, 100 ml of oil, and 80 g of coal are needed to produce a 1L plastic bottle",
+    "moreInformation": "More information..."
+  },
+  "concept": {
+    "subtitle": "The concept",
+    "title": "Drinking water: a precious resource to locate",
+    "appPreviews": [
+      {
+        "picture": "/img/preview/akualis-app-preview-map.webp",
+        "alt": "Akualis app - map preview",
+        "info": {
+          "left": {
+            "title": "Validated sources",
+            "description": "Water points confirmed in real time by app contributors."
+          },
+          "right": {
+            "title": "Up-to-date points",
+            "description": "Confirmed by contributors who ensure the information stays relevant."
+          }
+        }
+      },
+      {
+        "picture": "/img/preview/akualis-app-preview-detail-fontaine.webp",
+        "alt": "Akualis app - fountain detail preview",
+        "info": {
+          "left": {
+            "title": "Easy access & location",
+            "description": "One button to navigate directly to the source with a photo to find it easily."
+          },
+          "right": {
+            "title": "Usage history",
+            "description": "See when the fountain was last used to confirm its existence and reliability."
+          }
+        }
+      },
+      {
+        "picture": "/img/preview/akualis-app-preview-parcours-gpx.webp",
+        "alt": "Akualis app - GPX import preview",
+        "info": {
+          "left": {
+            "title": "Import your routes",
+            "description": "Add a GPX file to display your route and locate water points along your way."
+          },
+          "right": {
+            "title": "Plan with confidence",
+            "description": "Anticipate stops by identifying available water points on your itinerary."
+          }
+        }
+      },
+      {
+        "picture": "/img/preview/akualis-app-preview-compte.webp",
+        "alt": "Akualis app - account preview",
+        "info": {
+          "left": {
+            "title": "Track your contributions",
+            "description": "Keep track of your additions and edits to help the community."
+          },
+          "right": {
+            "title": "Show your ranking",
+            "description": "See where you stand among active contributors and measure your impact."
+          }
+        }
+      }
+    ]
+  },
+  "team": {
+    "subtitle": "The team",
+    "title": "Who are we?",
+    "paragraphs": [
+      "Akualis is committed to serving the public interest, emphasizing transparency and collaboration.",
+      "At the origin of the association, a team of three founders share complementary skills and a common conviction that collective effort is essential to limit current environmental degradation.",
+      "Pauline brings communications expertise, business plan construction and strategic partnership development; Maxime ensures the technical relevance, optimisation and scalability of the Akualis platform; Jérémie is passionate about social entrepreneurship and contributes experience in managing complex technology projects, organisation, budgeting and planning to ensure the association's mission succeeds."
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "items": [
+      {
+        "name": "Lyla",
+        "picture": "/img/portrait/akualis-lyla.webp",
+        "alt": "Photo of Lyla - Akualis user finding drinking water points",
+        "quote": "Thanks to Akualis, I can easily find water points when I go out with my parents and fill my bottle instead of using plastic."
+      },
+      {
+        "name": "Benoît",
+        "picture": "/img/portrait/akualis-benoit.webp",
+        "alt": "Photo of Benoît - Akualis user",
+        "quote": "On hikes, by bike, in the city, Akualis lets me refill my bottles and fully enjoy my sports outings."
+      },
+      {
+        "name": "Philippe",
+        "picture": "/img/portrait/akualis-philippe.webp",
+        "alt": "Photo of Philippe - Akualis user",
+        "quote": "Akualis is more than a handy app — it’s fun and serves the public interest."
+      }
+    ]
+  },
+  "inform": {
+    "title": "Become a water explorer too!",
+    "paragraph": "By downloading Akualis you’ll have the unique opportunity to contribute to the creation of a global map of drinking water points — identifying new sources and confirming the quality of already listed ones. You’ll benefit from this map when you need to refill your bottle, reducing your environmental impact!",
+    "appStoreAlt": "Download on the App Store",
+    "playAlt": "Get it on Google Play",
+    "logoAlt": "Akualis app logo mapping drinking water points"
+  }
+}

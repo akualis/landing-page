@@ -2,59 +2,104 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { FaGlobe } from "react-icons/fa"; // added
 
-export default function Menu() {
+export default function Menu({ t }: { t?: any }) {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [lang, setLang] = useState<'fr' | 'en'>('fr');
-
-  // const toggleMenu = () => setMenuOpen((open) => !open);
-  // const toggleLang = () => setLang((l) => (l === 'fr' ? 'en' : 'fr'));
 
   const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null); // added
+  const [langOpen, setLangOpen] = useState(false); // added
 
-  const menuItems = [
-    {
-      label: "Concept",
-      href: "#concept",
-      show: true,
-    },
-    {
-      label: "Mission",
-      href: "#constat",
-      show: true,
-    },
-    {
-      label: "Equipe",
-      href: "#team",
-      show: true,
-    },
-    {
-      label: "Témoignages",
-      href: "#testimonials",
-      show: true,
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-      show: false,
-    },
-    {
-      label: "Webapp",
-      href: "https://water.akualis.com/",
-      show: true,
-    },
+  const supportedLangs = [
+    { code: "fr", label: t?.menu?.langFr ?? "FR" },
+    { code: "en", label: t?.menu?.langEn ?? "EN" },
   ];
+
+  const currentLang = (pathname || "").split("/")[1] || "fr";
+  const makeLangHref = (lang: string) => {
+    const rest = (pathname || "").replace(/^\/(en|fr)/, "");
+    return `/${lang}${rest || ""}`;
+  };
+
+  // add menuItems so menuItems.map(...) no longer throws
+  const menuItems = [
+    { label: t?.menu?.concept ?? "Concept", href: "#concept", show: true },
+    { label: t?.menu?.mission ?? "Mission", href: "#constat", show: true },
+    { label: t?.menu?.team ?? "Equipe", href: "#team", show: true },
+    { label: t?.menu?.testimonials ?? "Témoignages", href: "#testimonials", show: true },
+    { label: t?.menu?.blog ?? "Blog", href: "/blog", show: false },
+    { label: t?.menu?.webapp ?? "Webapp", href: "https://water.akualis.com/", show: true },
+  ];
+
+  // track which section is currently visible to highlight the corresponding menu item
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  useEffect(() => {
+    const sectionIds = menuItems
+      .map((m) => (m.href?.startsWith("#") ? m.href.slice(1) : null))
+      .filter(Boolean) as string[];
+
+    function onScroll() {
+      const offset = 120; // pixel threshold from top where a section is considered active
+      let found: string | null = null;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= offset && rect.bottom > offset) {
+          found = id;
+          break;
+        }
+      }
+
+      // // fallback: if no section matched, choose nearest by distance to top
+      // if (!found) {
+      //   let closest: { id: string; distance: number } | null = null;
+      //   for (const id of sectionIds) {
+      //     const el = document.getElementById(id);
+      //     if (!el) continue;
+      //     const rect = el.getBoundingClientRect();
+      //     const dist = Math.abs(rect.top);
+      //     if (!closest || dist < closest.distance) closest = { id, distance: dist };
+      //   }
+      //   found = closest?.id ?? null;
+      // }
+
+      setActiveSection(found);
+    }
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [menuItems]);
+
+  // close lang dropdown on outside click
+  useEffect(() => {
+    if (!langOpen) return;
+    function handleClickOutside(event: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(event.target as Node)) {
+        setLangOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [langOpen]);
 
   // Scroll logic for menu and floating CTA
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
-      // const docHeight =
-      //   document.documentElement.scrollHeight - window.innerHeight;
-      // const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
       setIsScrolledPastThreshold(scrollTop > 50);
     };
 
@@ -91,7 +136,7 @@ export default function Menu() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="Accueil Akualis"
+            aria-label={t?.menu?.homeAria ?? "Accueil Akualis"}
             className={`flex items-center transition-opacity duration-300 ${
               menuOpen
                 ? "opacity-100 pointer-events-auto"
@@ -102,7 +147,7 @@ export default function Menu() {
           >
             <Image
               src="/img/akualis-logo.webp"
-              alt="Logo Akualis"
+              alt={t?.menu?.logoAlt ?? "Logo Akualis"}
               width={112}
               height={50}
               className="h-[50px] w-auto"
@@ -116,13 +161,55 @@ export default function Menu() {
               (item) =>
                 item.show && (
                   <li key={item.label}>
-                    <a href={item.href} className="menu-item px-3 text-primary">
+                    <a
+                      href={item.href}
+                      className={`menu-item px-3 ${
+                        item.href?.startsWith("#")
+                          && activeSection === item.href.slice(1)
+                          && activeSection !== 'hero' // don't accent when the visible section is the hero
+                          ? "text-accent"
+                          : "text-primary"
+                      }`}
+                    >
                       {item.label}
                     </a>
                   </li>
                 )
             )}
           </ul>
+
+          {/* Desktop language selector (discreet globe icon) */}
+          <div className="hidden md:flex items-center gap-3 ml-4 relative" ref={langRef}>
+            <button
+              aria-label="Select language"
+              aria-expanded={langOpen}
+              onClick={() => setLangOpen((s) => !s)}
+              // add cursor pointer for better UX
+              className="p-2 rounded hover:bg-gray-100 transition-colors text-primary hover:text-accent"
+            >
+              <FaGlobe className="w-5 h-5" />
+            </button>
+
+            {langOpen && (
+              <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 bg-white rounded shadow-md w-10 z-50">
+                {supportedLangs.map((l) => (
+                  <Link
+                    key={l.code}
+                    href={makeLangHref(l.code)}
+                    className={`block px-3 py-2 text-sm ${
+                      currentLang === l.code ? "bg-accent text-white rounded" : "text-primary hover:bg-gray-50"
+                    }`}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setLangOpen(false);
+                    }}
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           <a
             href="#inform"
@@ -135,7 +222,7 @@ export default function Menu() {
                     : "opacity-0 pointer-events-none"
               }`}
           >
-            Découvrez Akualis
+            {t?.menu?.cta ?? "Découvrez Akualis"}
           </a>
 
           {/* Mobile menu */}
@@ -151,7 +238,7 @@ export default function Menu() {
                     : "opacity-0 pointer-events-none"
               }`}
             >
-              Découvrez Akualis
+              {t?.menu?.cta ?? "Découvrez Akualis"}
             </a>
             {/* Hamburger for mobile */}
             {!menuOpen && (
@@ -159,7 +246,7 @@ export default function Menu() {
               <button
                 className="flex items-center p-2"
                 onClick={() => setMenuOpen(true)}
-                aria-label="Ouvrir le menu"
+                aria-label={t?.menu?.openAria ?? "Ouvrir le menu"}
               >
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                   <path
@@ -176,7 +263,7 @@ export default function Menu() {
               <button
                 className="flex items-center p-2"
                 onClick={() => setMenuOpen(false)}
-                aria-label="Fermer le menu"
+                aria-label={t?.menu?.closeAria ?? "Fermer le menu"}
               >
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                   <path
@@ -204,7 +291,13 @@ export default function Menu() {
                     <li key={item.label}>
                       <a
                         href={item.href}
-                        className="menu-item text-primary"
+                        className={`menu-item text-primary ${
+                          item.href?.startsWith("#")
+                            && activeSection === item.href.slice(1)
+                            && activeSection !== 'hero' // same rule for mobile menu
+                            ? "text-accent"
+                            : ""
+                        }`}
                         onClick={() => setMenuOpen(false)}
                       >
                         {item.label}
@@ -213,6 +306,22 @@ export default function Menu() {
                   )
               )}
             </ul>
+
+            {/* Mobile language selector (bottom of menu) */}
+            <div className="flex justify-center items-center gap-3 py-4 border-t border-gray-100">
+              {supportedLangs.map((l) => (
+                <Link
+                  key={l.code}
+                  href={makeLangHref(l.code)}
+                  className={`px-3 py-1 rounded text-sm font-medium ${
+                    currentLang === l.code ? "bg-accent text-white" : "text-primary"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </nav>

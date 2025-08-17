@@ -1,18 +1,21 @@
 import Image from 'next/image';
 
-export const InformSection = () => {
+export const InformSection = ({ t }: { t?: any }) => {
+  // read values from translations
+  const title = t?.title;
+  const paragraph = t?.paragraph;
+  const appStoreAlt = t?.appStoreAlt;
+  const playAlt = t?.playAlt;
+  const logoAlt = t?.logoAlt;
+
   return (
     <section id="inform" className="w-full flex flex-col items-center text-center mt-6 py-14 px-4 scroll-mt-14">
       <div className="w-full max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-semibold">
-          Deviens toi aussi un explorateur de l’eau !
+          {title}
         </h2>
         <p className="mt-6 leading-relaxed whitespace-pre-line">
-          En téléchargeant Akualis, vous aurez l’opportunité unique de contribuer à la création
-          de cette carte répertoriant les points d’eau potable à travers le monde, en identifiant
-          de nouvelles sources d’eau et en confirmant la qualité de celles déjà répertoriées. Carte
-          dont vous pourrez vous-même bénéficier lorsque vous chercherez à remplir votre gourde,
-          réduisant ainsi votre impact environnemental !
+          {paragraph}
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center items-center text-center gap-4">
@@ -24,7 +27,7 @@ export const InformSection = () => {
           >
             <Image
               src="/img/App_Store_badge_fr.png"
-              alt="Télécharger dans l'App Store"
+              alt={appStoreAlt}
               width={250}
               height={79}
               className="rounded-[13px] w-[250px] h-[79px]"
@@ -39,7 +42,7 @@ export const InformSection = () => {
           >
             <Image
               src="/img/Google_Play_Store_badge_FR.svg"
-              alt="Disponible sur Google Play"
+              alt={playAlt}
               width={256}
               height={79}
               className="h-[78px] w-auto"
@@ -51,7 +54,7 @@ export const InformSection = () => {
           <Image
             id="hero-logo"
             src="/img/akualis-logo.webp"
-            alt="Logo de l'application Akualis répertoriant les points d'eau potable"
+            alt={logoAlt}
             width={200}
             height={200}
           />

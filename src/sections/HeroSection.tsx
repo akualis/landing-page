@@ -1,6 +1,14 @@
 import Image from 'next/image';
 
-export default function HeroSection() {
+export default function HeroSection({ t }: { t?: any }) {
+  // no local default values — use translation values only
+  const title = t?.title;
+  const subtitle = t?.subtitle;
+  const lead = t?.lead;
+  const ctaAppStoreAlt = t?.appStoreAlt;
+  const ctaPlayAlt = t?.playAlt;
+  const logoAlt = t?.logoAlt;
+
   return (
     <section
       id="hero"
@@ -13,21 +21,19 @@ export default function HeroSection() {
             id="hero-logo"
             className="mt-2 md:mt-12 pt-12"
             src="/img/akualis-logo.webp"
-            alt="Logo Akualis"
-            width={500} // Adjust width as needed
-            height={500} // Adjust height as needed
+            alt={logoAlt}
+            width={500}
+            height={500}
             priority
           />
           <p className="subtitle">
-            *Akualis, inspiré du latin “Aqualis”, nom commun pour désigner une
-            cruche
+            {subtitle}
           </p>
           <p className="text-3xl font-bold mt-12 h1">
-            Ensemble, cartographions les points d’eau potable !
+            {title}
           </p>
           <h1 className="my-8 small">
-            Akualis, la seule application qui référence en temps réel les points
-            d’eau potable dans le monde
+            {lead}
           </h1>
           <div className="flex justify-center items-center flex-col md:flex-row gap-4">
             <a
@@ -40,7 +46,7 @@ export default function HeroSection() {
                 src="/img/App_Store_badge_fr.png"
                 width={250}
                 height={79}
-                alt="Télécharger dans l'App Store"
+                alt={ctaAppStoreAlt}
                 style={{ borderRadius: '13px' }}
                 priority
               />
@@ -53,7 +59,7 @@ export default function HeroSection() {
             >
               <Image
                 src="/img/Google_Play_Store_badge_FR.svg"
-                alt="Disponible sur Google Play"
+                alt={ctaPlayAlt}
                 width={256}
                 height={79}
                 priority
