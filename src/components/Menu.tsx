@@ -1,19 +1,18 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { FaGlobe } from "react-icons/fa"; // added
+import { FaGlobe } from "react-icons/fa";
 
 export default function Menu({ t }: { t?: any }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
-  const langRef = useRef<HTMLDivElement>(null); // added
-  const [langOpen, setLangOpen] = useState(false); // added
+  const langRef = useRef<HTMLDivElement>(null);
+  const [langOpen, setLangOpen] = useState(false);
 
   const supportedLangs = [
     { code: "fr", label: t?.menu?.langFr ?? "FR" },
@@ -26,15 +25,19 @@ export default function Menu({ t }: { t?: any }) {
     return `/${lang}${rest || ""}`;
   };
 
-  // add menuItems so menuItems.map(...) no longer throws
-  const menuItems = [
-    { label: t?.menu?.concept ?? "Concept", href: "#concept", show: true },
-    { label: t?.menu?.mission ?? "Mission", href: "#constat", show: true },
-    { label: t?.menu?.team ?? "Equipe", href: "#team", show: true },
-    { label: t?.menu?.testimonials ?? "Témoignages", href: "#testimonials", show: true },
-    { label: t?.menu?.blog ?? "Blog", href: "/blog", show: false },
-    { label: t?.menu?.webapp ?? "Webapp", href: "https://water.akualis.com/", show: true },
-  ];
+  // memoize menu items so useEffect dependencies are stable
+  const menuItems = useMemo(
+    () => [
+      { label: t?.menu?.concept ?? "Concept", href: "#concept", show: true },
+      { label: t?.menu?.mission ?? "Mission", href: "#constat", show: true },
+      { label: t?.menu?.team ?? "Equipe", href: "#team", show: true },
+      { label: t?.menu?.testimonials ?? "Témoignages", href: "#testimonials", show: true },
+      { label: t?.menu?.blog ?? "Blog", href: "/blog", show: false },
+      { label: t?.menu?.webapp ?? "Webapp", href: "https://water.akualis.com/", show: true },
+    ],
+    // depend on t reference so items update when translations change
+    [t]
+  );
 
   // track which section is currently visible to highlight the corresponding menu item
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -57,19 +60,6 @@ export default function Menu({ t }: { t?: any }) {
           break;
         }
       }
-
-      // // fallback: if no section matched, choose nearest by distance to top
-      // if (!found) {
-      //   let closest: { id: string; distance: number } | null = null;
-      //   for (const id of sectionIds) {
-      //     const el = document.getElementById(id);
-      //     if (!el) continue;
-      //     const rect = el.getBoundingClientRect();
-      //     const dist = Math.abs(rect.top);
-      //     if (!closest || dist < closest.distance) closest = { id, distance: dist };
-      //   }
-      //   found = closest?.id ?? null;
-      // }
 
       setActiveSection(found);
     }
@@ -120,17 +110,19 @@ export default function Menu({ t }: { t?: any }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
+  // set locale cookie (used by middleware)
+  const setLocaleCookie = (lang: string) => {
+    // 1 year expiration
+    const maxAge = 60 * 60 * 24 * 365;
+    document.cookie = `locale=${lang}; Path=/; Max-Age=${maxAge}; SameSite=Lax`;
+  };
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500
-          ${
-            isScrolledPastThreshold
-              ? "bg-white shadow-md"
-              : "bg-transparent shadow-none"
-          }
-          ${menuOpen ? "bg-white" : ""}
-        `}
+          ${isScrolledPastThreshold ? "bg-white shadow-md" : "bg-transparent shadow-none"}
+          ${menuOpen ? "bg-white" : ""}`}
       >
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
           {/* Logo */}
@@ -163,7 +155,7 @@ export default function Menu({ t }: { t?: any }) {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className={`menu-item px-3 ${
+                      className={`hover:text-accent menu-item px-3 ${
                         item.href?.startsWith("#")
                           && activeSection === item.href.slice(1)
                           && activeSection !== 'hero' // don't accent when the visible section is the hero
@@ -184,8 +176,8 @@ export default function Menu({ t }: { t?: any }) {
               aria-label="Select language"
               aria-expanded={langOpen}
               onClick={() => setLangOpen((s) => !s)}
-              // add cursor pointer for better UX
-              className="p-2 rounded hover:bg-gray-100 transition-colors text-primary hover:text-accent"
+              style={{ cursor: "pointer" }}
+              className="p-2 rounded transition-colors text-primary hover:text-accent"
             >
               <FaGlobe className="w-5 h-5" />
             </button>
@@ -196,13 +188,14 @@ export default function Menu({ t }: { t?: any }) {
                   <Link
                     key={l.code}
                     href={makeLangHref(l.code)}
-                    className={`block px-3 py-2 text-sm ${
-                      currentLang === l.code ? "bg-accent text-white rounded" : "text-primary hover:bg-gray-50"
-                    }`}
                     onClick={() => {
+                      setLocaleCookie(l.code);
                       setMenuOpen(false);
                       setLangOpen(false);
                     }}
+                    className={`block px-3 py-2 text-sm ${
+                      currentLang === l.code ? "bg-accent text-white rounded" : "text-primary hover:bg-gray-50"
+                    }`}
                   >
                     {l.label}
                   </Link>
@@ -313,10 +306,13 @@ export default function Menu({ t }: { t?: any }) {
                 <Link
                   key={l.code}
                   href={makeLangHref(l.code)}
+                  onClick={() => {
+                    setLocaleCookie(l.code);
+                    setMenuOpen(false);
+                  }}
                   className={`px-3 py-1 rounded text-sm font-medium ${
                     currentLang === l.code ? "bg-accent text-white" : "text-primary"
                   }`}
-                  onClick={() => setMenuOpen(false)}
                 >
                   {l.label}
                 </Link>
