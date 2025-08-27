@@ -33,7 +33,7 @@ export default function Menu({ t }: { t?: any }) {
       { label: t?.menu?.team ?? "Equipe", href: "#team", show: true },
       { label: t?.menu?.testimonials ?? "Témoignages", href: "#testimonials", show: true },
       { label: t?.menu?.blog ?? "Blog", href: "/blog", show: false },
-      { label: t?.menu?.webapp ?? "Webapp", href: "https://water.akualis.com/", show: true },
+      { label: t?.menu?.webapp ?? "Webapp", href: "/app", show: true },
     ],
     // depend on t reference so items update when translations change
     [t]

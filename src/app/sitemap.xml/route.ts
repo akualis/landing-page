@@ -45,10 +45,17 @@ export async function GET() {
     )
     .join("\n  ");
 
+  // add a single non-localized entry for /app (redirect route) — no hreflang alternates
+  const appEntry = `<url>
+    <loc>${baseUrl}/app</loc>
+    <lastmod>${buildDate}</lastmod>
+  </url>`;
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   ${urls}
+  ${appEntry}
 </urlset>`;
 
   return new Response(xml, {
