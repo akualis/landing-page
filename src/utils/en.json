@@ -64,7 +64,9 @@
     "copyright": "© 2025 Akualis. All rights reserved."
   },
   "blog": {
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "title": "The Blog",
+    "subtitle": "Discover our latest articles"
   },
   "constat": {
     "missionTitle": "Our Mission",

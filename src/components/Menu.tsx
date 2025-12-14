@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { FaGlobe } from "react-icons/fa";
 
-export default function Menu({ t }: { t?: any }) {
+export default function Menu({ t, sticky = false }: { t?: any; sticky?: boolean }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);
@@ -27,22 +27,32 @@ export default function Menu({ t }: { t?: any }) {
 
   // memoize menu items so useEffect dependencies are stable
   const menuItems = useMemo(
-    () => [
-      { label: t?.menu?.concept ?? "Concept", href: "#concept", show: true },
-      { label: t?.menu?.mission ?? "Mission", href: "#constat", show: true },
-      { label: t?.menu?.team ?? "Equipe", href: "#team", show: true },
-      { label: t?.menu?.testimonials ?? "Témoignages", href: "#testimonials", show: true },
-      { label: t?.menu?.blog ?? "Blog", href: "/blog", show: false },
-      { label: t?.menu?.webapp ?? "Webapp", href: "/app", show: true },
-    ],
+    () => {
+      const isHomePage = pathname === `/${currentLang}` || pathname === '/';
+      const prefix = isHomePage ? '' : `/${currentLang}/`;
+
+      return [
+        { label: t?.menu?.concept ?? "Concept", href: `${prefix}#concept`, show: true },
+        { label: t?.menu?.mission ?? "Mission", href: `${prefix}#constat`, show: true },
+        { label: t?.menu?.team ?? "Equipe", href: `${prefix}#team`, show: true },
+        { label: t?.menu?.testimonials ?? "Témoignages", href: `${prefix}#testimonials`, show: true },
+        { label: t?.menu?.blog ?? "Blog", href: `/${currentLang}/blog`, show: true },
+        { label: t?.menu?.webapp ?? "Webapp", href: "/app", show: true },
+      ];
+    },
     // depend on t reference so items update when translations change
-    [t]
+    [t, pathname, currentLang]
   );
 
   // track which section is currently visible to highlight the corresponding menu item
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
+    if (pathname?.includes('/blog')) {
+      setActiveSection('blog');
+      return;
+    }
+
     const sectionIds = menuItems
       .map((m) => (m.href?.startsWith("#") ? m.href.slice(1) : null))
       .filter(Boolean) as string[];
@@ -71,7 +81,7 @@ export default function Menu({ t }: { t?: any }) {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [menuItems]);
+  }, [menuItems, pathname]);
 
   // close lang dropdown on outside click
   useEffect(() => {
@@ -117,11 +127,13 @@ export default function Menu({ t }: { t?: any }) {
     document.cookie = `locale=${lang}; Path=/; Max-Age=${maxAge}; SameSite=Lax`;
   };
 
+  const showSticky = sticky || isScrolledPastThreshold;
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500
-          ${isScrolledPastThreshold ? "bg-white shadow-md" : "bg-transparent shadow-none"}
+          ${showSticky ? "bg-white shadow-md" : "bg-transparent shadow-none"}
           ${menuOpen ? "bg-white" : ""}`}
       >
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
@@ -132,7 +144,7 @@ export default function Menu({ t }: { t?: any }) {
             className={`flex items-center transition-opacity duration-300 ${
               menuOpen
                 ? "opacity-100 pointer-events-auto"
-                : isScrolledPastThreshold
+                : showSticky
                   ? "opacity-100"
                   : "opacity-0 pointer-events-none"
             }`}
@@ -156,9 +168,10 @@ export default function Menu({ t }: { t?: any }) {
                     <a
                       href={item.href}
                       className={`hover:text-accent menu-item px-3 ${
-                        item.href?.startsWith("#")
+                        (item.href?.startsWith("#")
                           && activeSection === item.href.slice(1)
-                          && activeSection !== 'hero' // don't accent when the visible section is the hero
+                          && activeSection !== 'hero') // don't accent when the visible section is the hero
+                        || (activeSection === 'blog' && item.href?.includes('/blog'))
                           ? "text-accent"
                           : "text-primary"
                       }`}

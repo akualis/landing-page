@@ -41,7 +41,7 @@ export function middleware(request) {
   // - Common public asset folders (/assets/, /images/, /img/, /static/)
   // - Specific files like sitemap.xml, robots.txt, favicon.ico at the root
   // - Any path that ends with a common file extension (e.g., .png, .jpg, .css, .js)
-  const EXCLUDED_PATHS_REGEX = /^\/(api\/|_next\/static\/|_next\/image\/|assets\/|images\/|img\/|icons\/|static\/|sitemap\.xml|robots\.txt|favicon\.ico|.*\.(?:png|jpg|jpeg|gif|svg|webp|js|css|json|xml|txt|woff|woff2|ttf|eot|otf|mp4|webm|ogg|mp3|wav|flac|aac))/i;
+  const EXCLUDED_PATHS_REGEX = /^\/(keystatic|api\/|_next\/static\/|_next\/image\/|assets\/|images\/|img\/|icons\/|static\/|sitemap\.xml|robots\.txt|favicon\.ico|.*\.(?:png|jpg|jpeg|gif|svg|webp|js|css|json|xml|txt|woff|woff2|ttf|eot|otf|mp4|webm|ogg|mp3|wav|flac|aac))/i;
 
   if (EXCLUDED_PATHS_REGEX.test(pathname)) {
     return; // Do not perform localization for these paths

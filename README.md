@@ -34,3 +34,7 @@ npm run gcloud:login
 ```sh
 npm run deploy:production
 ```
+
+### TODO
+
+Autodeploy on appengine or switch to Cloudflare or Vercel

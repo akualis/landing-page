@@ -381,54 +381,6 @@ p.small {
   border-radius: 20px;
 }
 
-// CONTAINER
-
-.container-large {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: $breakpoint-lg;
-
-  @media (max-width: $breakpoint-lg) {
-      max-width: 95%;
-  }
-}
-
-.container-mobile {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
-
-  @media (min-width: $breakpoint-sm) {
-      max-width: 90%;
-  }
-
-  @media (min-width: $breakpoint-md) {
-      max-width: 100%;
-  }
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
-
-  @media (min-width: $breakpoint-sm) {
-      max-width: 90%;
-  }
-
-  @media (min-width: $breakpoint-md) {
-      max-width: 60%;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-      max-width: 55%;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-      max-width: 50%;
-  }
-}
-
 // HERO
 
 #hero {
