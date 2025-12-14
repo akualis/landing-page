@@ -30,7 +30,7 @@ function getLocale(request) {
   }
 }
 
-export function middleware(request) {
+export function proxy(request) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
 
