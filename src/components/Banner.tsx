@@ -16,9 +16,9 @@ export default function Banner({ t }: { t?: any }) {
           <p className="subtitle mt-4">
             {subtitle}
           </p>
-          <h1 className="text-3xl font-bold mt-6 h1">
+          <h2 className="text-3xl font-bold mt-6 h2">
             {title}
-          </h1>
+          </h2>
         </div>
         <div className="flex-1"></div>
       </div>

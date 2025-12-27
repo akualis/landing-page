@@ -61,6 +61,12 @@
       "linkedin": "https://www.linkedin.com/company/akualis",
       "instagram": "https://www.instagram.com/akualis_fountain/"
     },
+    "socialBeaver": {
+      "x": "https://x.com/akualis_beaver",
+      "youtube": "https://www.youtube.com/@akualis_beaver",
+      "tiktok": "https://www.tiktok.com/@akualis_beaver",
+      "instagram": "https://www.instagram.com/akualis_beaver/"
+    },
     "copyright": "© 2025 Akualis. Tous droits réservés."
   },
   "blog": {
@@ -200,5 +206,11 @@
     "appStoreAlt": "Télécharger dans l'App Store",
     "playAlt": "Disponible sur Google Play",
     "logoAlt": "Logo de l'application Akualis répertoriant les points d'eau potable"
+  },
+  "notFound": {
+    "title": "404 - Page non trouvée",
+    "subtitle": "Oups ! Il semblerait que vous soyez égaré(e).",
+    "lead": "La page que vous recherchez a peut-être été déplacée ou n'existe pas.",
+    "backHome": "Retour à l'accueil"
   }
 }

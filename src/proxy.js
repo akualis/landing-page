@@ -30,9 +30,14 @@ function getLocale(request) {
   }
 }
 
-export function middleware(request) {
+export function proxy(request) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
+
+  // Prepare headers to allow language detection in not-found pages
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-url', request.url);
+  requestHeaders.set('x-invoke-path', pathname);
 
   // Paths to exclude from localization.
   // This regex matches:
@@ -44,14 +49,24 @@ export function middleware(request) {
   const EXCLUDED_PATHS_REGEX = /^\/(keystatic|api\/|_next\/static\/|_next\/image\/|assets\/|images\/|img\/|icons\/|static\/|sitemap\.xml|robots\.txt|favicon\.ico|.*\.(?:png|jpg|jpeg|gif|svg|webp|js|css|json|xml|txt|woff|woff2|ttf|eot|otf|mp4|webm|ogg|mp3|wav|flac|aac))/i;
 
   if (EXCLUDED_PATHS_REGEX.test(pathname)) {
-    return; // Do not perform localization for these paths
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
   }
 
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
 
-  if (pathnameHasLocale) return
+  if (pathnameHasLocale) {
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  }
 
   // Redirect if there is no locale
   const locale = getLocale(request)

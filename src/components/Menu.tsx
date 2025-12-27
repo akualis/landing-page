@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { FaGlobe } from "react-icons/fa";
 
-export default function Menu({ t, sticky = false }: { t?: any; sticky?: boolean }) {
+export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?: boolean; relLangs?: Record<string, string> }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolledPastThreshold, setIsScrolledPastThreshold] = useState(false);
@@ -21,6 +21,9 @@ export default function Menu({ t, sticky = false }: { t?: any; sticky?: boolean 
 
   const currentLang = (pathname || "").split("/")[1] || "fr";
   const makeLangHref = (lang: string) => {
+    if (relLangs && relLangs[lang]) {
+      return relLangs[lang];
+    }
     const rest = (pathname || "").replace(/^\/(en|fr)/, "");
     return `/${lang}${rest || ""}`;
   };
@@ -223,7 +226,7 @@ export default function Menu({ t, sticky = false }: { t?: any; sticky?: boolean 
               transition-opacity duration-300 hidden md:block ${
                 menuOpen
                   ? "opacity-100 pointer-events-auto"
-                  : isScrolledPastThreshold
+                  : showSticky
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
               }`}
@@ -239,7 +242,7 @@ export default function Menu({ t, sticky = false }: { t?: any; sticky?: boolean 
               transition-opacity duration-300 ${
                 menuOpen
                   ? "opacity-100 pointer-events-auto"
-                  : isScrolledPastThreshold
+                  : showSticky
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
               }`}

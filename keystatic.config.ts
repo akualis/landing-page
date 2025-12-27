@@ -1,4 +1,5 @@
 import { config, fields, collection } from '@keystatic/core';
+import { block, wrapper, inline } from '@keystatic/core/content-components';
 
 export default config({
   storage:
@@ -23,14 +24,33 @@ export default config({
             directory: 'public/images/posts',
             publicPath: '/images/posts',
         }),
-        content: fields.document({
+        content: fields.mdx({
           label: 'Content',
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: {
-            directory: 'public/images/posts/content',
-            publicPath: '/images/posts/content',
+          options: {
+            image: {
+              directory: 'public/images/posts/content',
+              publicPath: '/images/posts/content',
+            },
+          },
+          components: {
+            SocialBeaver: block({
+              label: 'Social Beaver',
+              schema: {},
+            }),
+            SocialLinks: block({
+              label: 'Social Links',
+              schema: {},
+            }),
+            PostImage: block({
+              label: 'Post Image',
+              schema: {
+                src: fields.text({ label: 'Image URL' }),
+                alt: fields.text({ label: 'Alt text' }),
+                width: fields.text({ label: 'Width (e.g. 100%)', defaultValue: '100%' }),
+                href: fields.text({ label: 'Link URL (optional)' }),
+                center: fields.checkbox({ label: 'Center image', defaultValue: true }),
+              },
+            }),
           },
         })
       },
@@ -52,16 +72,35 @@ export default config({
             directory: 'public/images/posts',
             publicPath: '/images/posts',
         }),
-        content: fields.document({
+        content: fields.mdx({
           label: 'Content',
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: {
-            directory: 'public/images/posts/content',
-            publicPath: '/images/posts/content',
+          options: {
+            image: {
+              directory: 'public/images/posts/content',
+              publicPath: '/images/posts/content',
+            },
           },
-        }),
+          components: {
+            SocialBeaver: block({
+              label: 'Social Beaver',
+              schema: {},
+            }),
+            SocialLinks: block({
+              label: 'Social Links',
+              schema: {},
+            }),
+            PostImage: block({
+              label: 'Post Image',
+              schema: {
+                src: fields.text({ label: 'Image URL' }),
+                alt: fields.text({ label: 'Alt text' }),
+                width: fields.text({ label: 'Width (e.g. 100%)', defaultValue: '100%' }),
+                href: fields.text({ label: 'Link URL (optional)' }),
+                center: fields.checkbox({ label: 'Center image', defaultValue: true }),
+              },
+            }),
+          },
+        })
       },
     }),
   },

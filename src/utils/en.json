@@ -61,11 +61,17 @@
       "linkedin": "https://www.linkedin.com/company/akualis",
       "instagram": "https://www.instagram.com/akualis_fountain/"
     },
+    "socialBeaver": {
+      "x": "https://x.com/akualis_beaver",
+      "youtube": "https://www.youtube.com/@akualis_beaver",
+      "tiktok": "https://www.tiktok.com/@akualis_beaver",
+      "instagram": "https://www.instagram.com/akualis_beaver/"
+    },
     "copyright": "© 2025 Akualis. All rights reserved."
   },
   "blog": {
     "readMore": "Read More",
-    "title": "The Blog",
+    "title": "Blog",
     "subtitle": "Discover our latest articles"
   },
   "constat": {
@@ -200,5 +206,11 @@
     "appStoreAlt": "Download on the App Store",
     "playAlt": "Get it on Google Play",
     "logoAlt": "Akualis app logo mapping drinking water points"
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "subtitle": "Oops! It seems you are lost.",
+    "lead": "The page you are looking for might have been moved or doesn't exist.",
+    "backHome": "Back to Home"
   }
 }
