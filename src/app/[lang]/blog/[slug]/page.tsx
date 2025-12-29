@@ -8,6 +8,7 @@ import FooterSection from '@/sections/FooterSection';
 import { getTranslations } from '@/utils/i18n';
 import SocialBeaver from '@/components/blog/SocialBeaver';
 import SocialLinks from '@/components/blog/SocialLinks';
+import { InformSection } from '@/sections/InformSection';
 
 export async function generateStaticParams() {
   const postsEn = await reader.collections.postsEn.list();
@@ -45,9 +46,9 @@ export default async function PostPage({ params }: { params: Promise<{ lang: str
 
   return (
     <>
-      <Menu t={i18n} relLangs={relLangs} />
+      <Menu t={i18n} sticky={true} relLangs={relLangs} />
       
-      <div className="max-w-screen-xl mx-auto pt-24 min-h-screen">
+      <div className="max-w-screen-xl mx-auto pt-18 min-h-screen">
         <nav className="container mx-auto px-4 py-4 max-w-3xl text-sm text-gray-500">
           <Link href={`/${lang}`} className="hover:text-accent">
             {i18n.navbar?.home || 'Home'}
@@ -61,7 +62,7 @@ export default async function PostPage({ params }: { params: Promise<{ lang: str
         </nav>
 
         <article className="container mx-auto px-4 py-8 max-w-3xl">
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+          <h1 className="blog font-bold mb-4">{post.title}</h1>
           {post.publishedDate && (
             <p className="text-gray-500 mb-8">
               {new Date(post.publishedDate).toLocaleDateString(lang, {
@@ -72,11 +73,11 @@ export default async function PostPage({ params }: { params: Promise<{ lang: str
             </p>
           )}
           {post.coverImage && (
-            <div className="mb-8 rounded-lg overflow-hidden">
+            <div className="mb-8 overflow-hidden flex justify-center">
                 <img
                     src={post.coverImage}
                     alt={post.title}
-                    className="w-full h-auto"
+                    className="h-80 w-auto"
                 />
             </div>
           )}
@@ -104,12 +105,35 @@ export default async function PostPage({ params }: { params: Promise<{ lang: str
                     return <a href={href} target="_blank" rel="noopener noreferrer">{img}</a>;
                   }
                   return img;
+                },
+                YouTube: ({ url }: { url: string }) => {
+                  const getYouTubeId = (url: string) => {
+                    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                    const match = url.match(regExp);
+                    return (match && match[2].length === 11) ? match[2] : null;
+                  };
+                  const videoId = getYouTubeId(url);
+                  if (!videoId) return <div>Invalid YouTube URL</div>;
+                  return (
+                    <div className="aspect-video my-8">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  );
                 }
               }}
             />
           </div>
         </article>
       </div>
+      <InformSection t={i18n.inform} />
       <FooterSection t={i18n} />
     </>
   );

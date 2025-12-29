@@ -51,6 +51,12 @@ export default config({
                 center: fields.checkbox({ label: 'Center image', defaultValue: true }),
               },
             }),
+            YouTube: block({
+              label: 'YouTube Video',
+              schema: {
+                url: fields.text({ label: 'YouTube URL' }),
+              },
+            }),
           },
         })
       },

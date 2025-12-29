@@ -15,6 +15,13 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
     ? await reader.collections.postsFr.all()
     : await reader.collections.postsEn.all();
 
+    // Add this sorting logic:
+    const sortedPosts = [...posts].sort((a, b) => {
+      const dateA = a.entry.publishedDate ? new Date(a.entry.publishedDate).getTime() : 0;
+      const dateB = b.entry.publishedDate ? new Date(b.entry.publishedDate).getTime() : 0;
+      return dateB - dateA; // Newest first
+    });
+
   // Customize Banner props for Blog
   const blogBannerProps = {
     ...i18n.hero,
@@ -29,7 +36,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
       <div className="max-w-screen-xl mx-auto">
         <div className="container mx-auto px-4 py-8">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
+            {sortedPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/${lang}/blog/${post.slug}`}
@@ -45,9 +52,9 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
                     </div>
                 )}
                 <div className="p-4">
-                  <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600">
+                  <h4 className="font-semibold mb-2 group-hover:text-blue-600">
                     {post.entry.title}
-                  </h2>
+                  </h4>
                   {post.entry.publishedDate && (
                     <p className="text-gray-500 text-sm">
                       {new Date(post.entry.publishedDate).toLocaleDateString(lang, {
