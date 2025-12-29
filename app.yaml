@@ -1,4 +1,4 @@
-runtime: nodejs20
+runtime: nodejs24
 
 automatic_scaling:
   target_cpu_utilization: 0.8
