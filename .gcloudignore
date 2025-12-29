@@ -30,6 +30,7 @@ yarn-error.log
 
 # Environment files
 *.env
+!.env.production
 
 # Other OS-specific or editor files
 .DS_Store
