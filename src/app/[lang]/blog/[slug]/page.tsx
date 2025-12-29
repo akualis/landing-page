@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { reader } from '../../../../utils/keystatic';
@@ -9,6 +10,38 @@ import { getTranslations } from '@/utils/i18n';
 import SocialBeaver from '@/components/blog/SocialBeaver';
 import SocialLinks from '@/components/blog/SocialLinks';
 import { InformSection } from '@/sections/InformSection';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; slug: string }>;
+}): Promise<Metadata> {
+  const { lang, slug } = await params;
+  const i18n = await getTranslations(lang as 'en' | 'fr');
+
+  const post =
+    lang === 'fr'
+      ? await reader.collections.postsFr.read(slug)
+      : await reader.collections.postsEn.read(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  const title = i18n.metadata.titleTemplate
+    ? i18n.metadata.titleTemplate.replace('%s', post.title)
+    : post.title;
+
+  return {
+    title: title,
+    description: post.description || i18n.metadata.description,
+    openGraph: {
+      title: title,
+      description: post.description || i18n.metadata.description,
+      images: post.coverImage ? [post.coverImage] : undefined,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const postsEn = await reader.collections.postsEn.list();

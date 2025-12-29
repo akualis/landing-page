@@ -21,6 +21,7 @@
   "metadata": {
     "metadataBase": "https://akualis.com",
     "title": "Akualis : Find. Refill. Protect.",
+    "titleTemplate": "%s | Akualis",
     "description": "Akualis is an app that guides you to the nearest safe drinking water sources, helping reduce your ecological footprint while staying hydrated. Join our community promoting more sustainable and eco-friendly water consumption.",
     "keywords": "Water, Drinking water, Public fountains, Refill bottle, Reduce plastic, Akualis app, Sustainable hydration",
     "openGraph": {
@@ -72,7 +73,12 @@
   "blog": {
     "readMore": "Read More",
     "title": "Blog",
-    "subtitle": "Discover our latest articles"
+    "subtitle": "Discover our latest articles",
+    "metadata" : {
+      "title": "Blog",
+      "description": "Discover our latest articles",
+      "keywords": "Blog, Akualis, Water, Drinking water, Public fountains, Refill bottle, Reduce plastic, Akualis app, Sustainable hydration"
+    }
   },
   "constat": {
     "missionTitle": "Our Mission",

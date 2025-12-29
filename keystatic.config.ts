@@ -14,6 +14,7 @@ export default config({
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
+        description: fields.text({ label: 'Description', multiline: true }),
         publishedDate: fields.date({ label: 'Published Date' }),
         relatedFr: fields.relationship({
           label: 'French Version',
@@ -68,6 +69,7 @@ export default config({
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
+        description: fields.text({ label: 'Description', multiline: true }),
         publishedDate: fields.date({ label: 'Published Date' }),
         relatedEn: fields.relationship({
           label: 'English Version',
@@ -103,6 +105,12 @@ export default config({
                 width: fields.text({ label: 'Width (e.g. 100%)', defaultValue: '100%' }),
                 href: fields.text({ label: 'Link URL (optional)' }),
                 center: fields.checkbox({ label: 'Center image', defaultValue: true }),
+              },
+            }),
+            YouTube: block({
+              label: 'YouTube Video',
+              schema: {
+                url: fields.text({ label: 'YouTube URL' }),
               },
             }),
           },

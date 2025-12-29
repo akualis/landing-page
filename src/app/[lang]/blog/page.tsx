@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import '../../theme.scss';
 import { reader } from '../../../utils/keystatic';
@@ -6,6 +7,23 @@ import FooterSection from '@/sections/FooterSection';
 import Banner from '@/components/Banner';
 import { InformSection } from '@/sections/InformSection';
 import { getTranslations } from '@/utils/i18n';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const i18n = await getTranslations(lang as 'en' | 'fr');
+  const md = i18n.blog?.metadata ?? {};
+  const title = i18n.metadata.titleTemplate ? i18n.metadata.titleTemplate.replace('%s', md.title) : md.title;
+
+  return {
+    title: title,
+    description: md.description,
+    keywords: md.keywords,
+  };
+}
 
 export default async function BlogPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
