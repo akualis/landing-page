@@ -40,7 +40,7 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
         { label: t?.menu?.team ?? "Equipe", href: `${prefix}#team`, show: true },
         { label: t?.menu?.testimonials ?? "Témoignages", href: `${prefix}#testimonials`, show: true },
         { label: t?.menu?.blog ?? "Blog", href: `/${currentLang}/blog`, show: true },
-        { label: t?.menu?.webapp ?? "Webapp", href: "/app", show: true },
+        { label: t?.menu?.webapp ?? "Webapp", href: `/${currentLang}/app`, show: true },
       ];
     },
     // depend on t reference so items update when translations change

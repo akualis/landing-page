@@ -9,6 +9,7 @@ export async function GET() {
   const pagePaths = [
     "",
     "/blog",
+    "/app",
     // "/concept",
     // "/constat",
     // "/team",
@@ -90,17 +91,11 @@ ${alternates.join("\n")}
 
   const dynamicUrls = [...blogUrlsEn, ...blogUrlsFr].join("\n");
 
-  const appEntry = `  <url>
-    <loc>${baseUrl}/app</loc>
-    <lastmod>${buildDate}</lastmod>
-  </url>`;
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${staticUrls}
 ${dynamicUrls}
-${appEntry}
 </urlset>`;
 
   return new Response(xml, {
