@@ -4,15 +4,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  async redirects() {
-    return [
-      {
-        source: "/app",
-        destination: "https://water.akualis.com/",
-        permanent: true,
-      },
-    ];
-  },
+  allowedDevOrigins: ["127.0.0.1"],
 };
 
 export default nextConfig;
