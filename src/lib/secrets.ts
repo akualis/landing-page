@@ -1,16 +1,21 @@
-import { SecretManagerServiceClient } from '@google-cloud/secret-manager';
-
+// import { SecretManagerServiceClient } from '@google-cloud/secret-manager';
+/*
 const secretsToFetch = [
   'KEYSTATIC_GITHUB_CLIENT_ID',
   'KEYSTATIC_GITHUB_CLIENT_SECRET',
   'KEYSTATIC_SECRET',
 ] as const;
+*/
 
 let secretsLoaded = false;
 
 export async function loadSecrets() {
   if (secretsLoaded) return;
   
+  console.log('Secrets management is now handled via Environment Variables (Cloudflare Pages).');
+  secretsLoaded = true;
+
+  /*
   // Only fetch secrets in production or if explicitly enabled
   // In development, we usually use .env.local
   if (process.env.NODE_ENV !== 'production' && !process.env.FORCE_FETCH_SECRETS) {
@@ -58,4 +63,5 @@ export async function loadSecrets() {
   } catch (error) {
     console.error('Error initializing Secret Manager client or fetching secrets:', error);
   }
+  */
 }

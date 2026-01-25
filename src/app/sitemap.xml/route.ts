@@ -1,5 +1,7 @@
 import { reader } from "@/utils/keystatic";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const baseUrl = "https://akualis.com";
   const buildDate = new Date().toISOString();

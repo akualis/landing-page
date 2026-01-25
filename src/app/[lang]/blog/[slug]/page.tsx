@@ -43,10 +43,12 @@ export async function generateMetadata({
   };
 }
 
+export const dynamic = 'force-static';
+
 export async function generateStaticParams() {
   const postsEn = await reader.collections.postsEn.list();
   const postsFr = await reader.collections.postsFr.list();
-  
+
   return [
     ...postsEn.map((slug) => ({ slug, lang: 'en' })),
     ...postsFr.map((slug) => ({ slug, lang: 'fr' })),

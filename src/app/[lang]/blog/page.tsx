@@ -8,6 +8,12 @@ import Banner from '@/components/Banner';
 import { InformSection } from '@/sections/InformSection';
 import { getTranslations } from '@/utils/i18n';
 
+export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'fr' }];
+}
+
 export async function generateMetadata({
   params,
 }: {

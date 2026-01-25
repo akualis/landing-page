@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { getTranslations } from '@/utils/i18n';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

@@ -1,4 +1,3 @@
-import { headers } from 'next/headers';
 import Script from "next/script";
 import { getTranslations } from '@/utils/i18n';
 import NotFoundUI from '@/components/NotFoundUI';
@@ -9,18 +8,8 @@ export const metadata = {
 };
 
 export default async function GlobalNotFound() {
-  const headersList = await headers();
-  const pathname = headersList.get('x-invoke-path') || '';
-  const url = headersList.get('x-url') || '';
-  const referer = headersList.get('referer') || '';
-  
-  // Try to detect lang from any of these
-  const combined = `${pathname}|${url}|${referer}`;
-  let lang: 'en' | 'fr' = 'en';
-  if (combined.includes('/fr/') || combined.includes('/fr?')) {
-    lang = 'fr';
-  }
-  
+  // Default to English for static export (language detection happens client-side or via URL)
+  const lang: 'en' | 'fr' = 'en';
   const i18n = await getTranslations(lang);
 
   return (

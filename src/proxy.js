@@ -1,9 +1,21 @@
 import { NextResponse } from "next/server";
 import { match } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
+
 
 let locales = ['en', 'fr'] // Updated to support only English and French
 let defaultLocale = 'en' // Set default locale
+
+function parseAcceptLanguage(header) {
+    if (!header) return [];
+    return header.split(',')
+        .map(lang => {
+            const parts = lang.split(';');
+            const q = parts[1] ? parseFloat(parts[1].split('=')[1]) : 1;
+            return { lang: parts[0].trim(), q };
+        })
+        .sort((a, b) => b.q - a.q)
+        .map(obj => obj.lang);
+}
 
 // Get the preferred locale, similar to the above or using a library
 function getLocale(request) {
@@ -17,7 +29,7 @@ function getLocale(request) {
   const acceptLanguageHeader = request.headers.get('accept-language')
   let languages;
   if (acceptLanguageHeader) {
-    languages = new Negotiator({ headers: { 'accept-language': acceptLanguageHeader } }).languages();
+    languages = parseAcceptLanguage(acceptLanguageHeader);
   } else {
     languages = [defaultLocale]; // Fallback if header is missing
   }
@@ -30,7 +42,7 @@ function getLocale(request) {
   }
 }
 
-export function proxy(request) {
+export default function proxy(request) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
 

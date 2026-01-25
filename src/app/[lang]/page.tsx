@@ -9,6 +9,8 @@ import ConceptSection from '@/sections/ConceptSection';
 import { InformSection } from '@/sections/InformSection';
 import { getTranslations } from '@/utils/i18n';
 
+export const dynamic = 'force-static';
+
 // On s'aligne sur le typage du layout.tsx pour satisfaire le type interne "PageProps" de Next.js
 export default async function HomePage({
   params,

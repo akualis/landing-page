@@ -1,10 +1,6 @@
 import { makeRouteHandler } from '@keystatic/next/route-handler';
 import keystaticConfig from '../../../../../keystatic.config';
 
-import { loadSecrets } from '@/lib/secrets';
-
-export const dynamic = 'force-dynamic';
-
 function rewriteUrl(request: Request) {
     const forwardedHost = request.headers.get("x-forwarded-host");
     const forwardedProto = request.headers.get("x-forwarded-proto");
@@ -23,7 +19,6 @@ function rewriteUrl(request: Request) {
 }
 
 export async function GET(request: Request) {
-  await loadSecrets();
   const { GET: _GET } = makeRouteHandler({
     config: keystaticConfig,
   });
@@ -31,7 +26,6 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  await loadSecrets();
   const { POST: _POST } = makeRouteHandler({
     config: keystaticConfig,
   });
