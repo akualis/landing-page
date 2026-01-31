@@ -2,7 +2,7 @@
 
 Akualis landing page
 
-- host : Google App Engine
+- host : Vercel
 - backend : NodeJS - NextJS
 - frontend : React - NextJS
 - blog : Keystatic
@@ -50,7 +50,3 @@ npm run gcloud:login
 ```sh
 npm run deploy:production
 ```
-
-### TODO
-
-Autodeploy on appengine or switch to Cloudflare or Vercel
