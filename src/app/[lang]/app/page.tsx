@@ -1,7 +1,12 @@
 import { Metadata } from 'next';
 import { getTranslations } from '@/utils/i18n';
+import Menu from '@/components/Menu';
 
 export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'fr' }];
+}
 
 export async function generateMetadata({
   params,
@@ -11,31 +16,28 @@ export async function generateMetadata({
   const { lang } = await params;
   const i18n = await getTranslations(lang as 'en' | 'fr');
 
-  // Assuming you want similar metadata logic to the blog, 
-  // but potentially with specific keys for the app page if they existed in i18n.
-  // For now, I will use a generic title or fallback to the site title.
-  // You might want to add specific 'app' keys to your i18n dictionaries later.
-  const title = (i18n.metadata.titleTemplate ? i18n.metadata.titleTemplate.replace('%s', "App") : "Akualis");
+  const title = (i18n.metadata.titleTemplate ? i18n.metadata.titleTemplate.replace('%s', "Webapp") : "Akualis");
 
   return {
     title: title,
-    description: i18n.metadata.description, // Fallback to general description
-    // Add other metadata fields as needed
+    description: i18n.metadata.description,
   };
 }
 
-export default function App() {
+export default async function App({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const i18n = await getTranslations(lang as 'en' | 'fr');
+
   return (
-    <div style={{ width: "100%", height: "100vh", overflow: "hidden" }}>
-      <iframe
-        src="https://water.akualis.com/"
-        style={{
-          width: "100%",
-          height: "100%",
-          border: "none",
-        }}
-        title="Akualis App"
-      />
-    </div>
+    <>
+      <Menu t={i18n} sticky={true} />
+      <div className="mt-16 w-full h-[calc(100vh-4rem)] overflow-hidden">
+        <iframe
+          src="https://water.akualis.com/"
+          className="w-full h-full border-none"
+          title="Akualis App"
+        />
+      </div>
+    </>
   );
 }

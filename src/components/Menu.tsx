@@ -28,10 +28,14 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
     return `/${lang}${rest || ""}`;
   };
 
+  const isHomePage = pathname === `/${currentLang}` || pathname === '/';
+  const isBlogPage = pathname?.includes('/blog');
+  const hasInformSection = isHomePage || isBlogPage;
+  const informHref = hasInformSection ? '#inform' : `/${currentLang}/#inform`;
+
   // memoize menu items so useEffect dependencies are stable
   const menuItems = useMemo(
     () => {
-      const isHomePage = pathname === `/${currentLang}` || pathname === '/';
       const prefix = isHomePage ? '' : `/${currentLang}/`;
 
       return [
@@ -44,7 +48,7 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
       ];
     },
     // depend on t reference so items update when translations change
-    [t, pathname, currentLang]
+    [t, pathname, currentLang, isHomePage]
   );
 
   // track which section is currently visible to highlight the corresponding menu item
@@ -53,6 +57,11 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
   useEffect(() => {
     if (pathname?.includes('/blog')) {
       setActiveSection('blog');
+      return;
+    }
+
+    if (pathname?.includes('/app')) {
+      setActiveSection('webapp');
       return;
     }
 
@@ -175,6 +184,7 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
                           && activeSection === item.href.slice(1)
                           && activeSection !== 'hero') // don't accent when the visible section is the hero
                         || (activeSection === 'blog' && item.href?.includes('/blog'))
+                        || (activeSection === 'webapp' && item.href?.includes('/app'))
                           ? "text-accent"
                           : "text-primary"
                       }`}
@@ -221,7 +231,7 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
           </div>
 
           <a
-            href="#inform"
+            href={informHref}
             className={`hero-cta rounded-full font-semibold bg-accent text-white px-4 py-2 ml-2
               transition-opacity duration-300 hidden md:block ${
                 menuOpen
@@ -237,7 +247,7 @@ export default function Menu({ t, sticky = false, relLangs }: { t?: any; sticky?
           {/* Mobile menu */}
           <span className="md:hidden flex items-center gap-1">
             <a
-              href="#inform"
+              href={informHref}
               className={`hero-cta rounded-full font-semibold bg-accent text-white px-4 py-2 ml-2
               transition-opacity duration-300 ${
                 menuOpen
