@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { lang } = await params;
   const i18n = await getTranslations(lang as 'en' | 'fr');
 
-  const title = (i18n.metadata.titleTemplate ? i18n.metadata.titleTemplate.replace('%s', "App") : "Akualis");
+  const title = (i18n.metadata.titleTemplate ? i18n.metadata.titleTemplate.replace('%s', "Webapp") : "Akualis");
 
   return {
     title: title,
