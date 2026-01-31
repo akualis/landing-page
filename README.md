@@ -30,23 +30,3 @@ npm run dev
 ```sh
 npm run lint
 ```
-
-### Test locally in App Engine Environement
-
-```sh
-npm run staging
-```
-
-## Deploy
-
-If it's not already set
-
-```sh
-npm run gcloud:login
-```
-
-### Production deployment
-
-```sh
-npm run deploy:production
-```
