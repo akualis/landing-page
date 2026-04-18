@@ -12,6 +12,7 @@ export default config({
       slugField: 'title',
       path: 'src/content/posts/en/*',
       format: { contentField: 'content' },
+      columns: ['publishedDate', 'title'],
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
         description: fields.text({ label: 'Description', multiline: true }),
@@ -67,6 +68,7 @@ export default config({
       slugField: 'title',
       path: 'src/content/posts/fr/*',
       format: { contentField: 'content' },
+      columns: ['publishedDate', 'title'],
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
         description: fields.text({ label: 'Description', multiline: true }),
