@@ -31,7 +31,7 @@ export default async function App({ params }: { params: Promise<{ lang: string }
   return (
     <>
       <Menu t={i18n} sticky={true} />
-      <div className="mt-16 w-full h-[calc(100vh-4rem)] overflow-hidden">
+      <div className="mt-16 w-full h-[calc(100dvh-4rem)] overflow-hidden">
         <iframe
           src="https://water.akualis.com/"
           className="w-full h-full border-none"
