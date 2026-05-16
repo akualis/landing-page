@@ -36,6 +36,7 @@ export default async function App({ params }: { params: Promise<{ lang: string }
           src="https://water.akualis.com/"
           className="w-full h-full border-none"
           title="Akualis App"
+          allow="geolocation"
         />
       </div>
     </>
